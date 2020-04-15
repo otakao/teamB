@@ -53,8 +53,11 @@
 - has_many :items
 - has_many :favorites
 - has_many :fav_items, through: :favorites, source: :item
-- has_many :cards
+- has_one :card
 - belongs_to :prefecture
+- has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
+- has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
+- has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 
 
 ## Favoritesテーブル
@@ -118,9 +121,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |category|text||
+|ancestry|string|null: false|
 
 ### Association
 - has_many :items
+- has_ancestry
 
 
 ## Postagesテーブル
