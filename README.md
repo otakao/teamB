@@ -19,14 +19,14 @@
 ### Association
 - belongs_to :saler, class_name: "User"
 - belongs_to :buyer, class_name: "User"
-- has_many :favorites
+- has_many :favorites, dependent: :destroy
 - has_many :users, through: :favorites
 - belongs_to :condition
 - belongs_to :shipping_date
 - belongs_to :postage
 - belongs_to :category
 - belongs_to :brand
-- has_many :item_images
+- has_many :item_images, dependent: :destroy
 
 
 ## Usersテーブル
@@ -44,8 +44,8 @@
 |tel|integer||
 
 ### Association
-- has_many :items
-- has_many :favorites
+- has_many :items, dependent: :destroy
+- has_many :favorites, dependent: :destroy
 - has_many :fav_items, through: :favorites, source: :item
 - has_one :card
 - has_one :address
