@@ -4,7 +4,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 |discription|text|null: false|
 |price|integer|null: false|
 |saler_id|integer|null: false, foreign_key: true|
@@ -21,7 +21,6 @@
 - belongs_to :buyer, class_name: "User"
 - has_many :favorites
 - has_many :users, through: :favorites
-- belongs_to :prefecture
 - belongs_to :condition
 - belongs_to :shipping_date
 - belongs_to :postage
@@ -34,13 +33,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|text|null: false , unique: true|
+|nickname|string|null: false , unique: true|
 |email|text|null: false , unique: true|
 |password|string|null: false|
-|last_name|text|null: false|
-|first_name|text|null: false|
-|last_name_furigana|text|null: false|
-|first_name_furigana|text|null: false|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_furigana|string|null: false|
+|first_name_furigana|string|null: false|
 |birthday|date|null: false|
 |tel|integer||
 
@@ -72,26 +71,15 @@
 |Column|Type|Options|
 |------|----|-------|
 |zipcode|integer(7)|null: false|
-|prefecture_name|text|null: false|
-|city|text|null: false|
-|street|text|null: false|
-|building|text||
+|prefecture_name|string|null: false|
+|city|string|null: false|
+|street|string|null: false|
+|building|string||
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :items
 - belongs_to :user
-
-
-## Prefecturesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|prefecture|text||
-
-### Association
-- has_many :items
-
 
 ## Cardsテーブル
 
@@ -120,7 +108,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|brand|text||
+|name|string|null: false|
 
 ### Association
 - has_many :items
@@ -130,8 +118,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|category|text||
-|ancestry|string|null: false|
+|name|string|null: false|
+|ancestry|string||
 
 ### Association
 - has_many :items
