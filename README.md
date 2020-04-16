@@ -42,11 +42,6 @@
 |last_name_furigana|text|null: false|
 |first_name_furigana|text|null: false|
 |birthday|date|null: false|
-|postal_code|integer|null: false|
-|prefecture_id|integer|null: false, foreign_key: true|
-|city|text|null: false|
-|address|text|null: false|
-|apartment|text||
 |tel|integer||
 
 ### Association
@@ -54,7 +49,7 @@
 - has_many :favorites
 - has_many :fav_items, through: :favorites, source: :item
 - has_one :card
-- belongs_to :prefecture
+- has_one :address
 - has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
 - has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
 - has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
@@ -72,6 +67,22 @@
 - belongs_to :item
 
 
+## Addressesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|zipcode|integer(7)|null: false|
+|prefecture_name|text|null: false|
+|city|text|null: false|
+|street|text|null: false|
+|building|text||
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- has_many :items
+- belongs_to :user
+
+
 ## Prefecturesテーブル
 
 |Column|Type|Options|
@@ -80,7 +91,6 @@
 
 ### Association
 - has_many :items
-- has_many :users
 
 
 ## Cardsテーブル
