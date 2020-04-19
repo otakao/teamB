@@ -13,7 +13,6 @@
 |postage_id|integer|null: false, foreign_key: true|
 |shipping_date_id|integer|null: false, foreign_key: true|
 |condition_id|integer|null: false, foreign_key: true|
-|prefecture_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -34,7 +33,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false , unique: true|
-|email|text|null: false , unique: true|
+|email|string|null: false , unique: true|
 |password|string|null: false|
 |last_name|string|null: false|
 |first_name|string|null: false|
@@ -49,7 +48,7 @@
 - has_many :fav_items, through: :favorites, source: :item
 - has_one :card
 - has_one :address
-- has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
+- has_many :bought_items, foreign_key: "buyer_id", class_name: "Item"
 - has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
 - has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 
@@ -70,7 +69,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|zipcode|integer(7)|null: false|
+|postal_code|string|null: false|
 |prefecture_name|string|null: false|
 |city|string|null: false|
 |street|string|null: false|
@@ -78,7 +77,6 @@
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :items
 - belongs_to :user
 
 ## Cardsテーブル
