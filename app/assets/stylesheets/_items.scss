@@ -1,3 +1,9 @@
+@mixin backimage($url){
+  background-image: image-url($url);
+  background-size: cover;
+}
+
+
 .furima-header{
   padding: 0 60px;
   &__content{
@@ -9,6 +15,7 @@
       display: flex;
       position: relative;
       align-items: center;
+
 
       &__logo{
         width: 140px;
@@ -66,13 +73,12 @@
 .furima-main{
 
   &__top-image{
-    width: 100%;
+    width: calc(100vw - 120px);
     height: 560px;
     align-items: center;
     padding: 0 60px;
     display: flex;
-    background-image: url("bg-mainVisual-pict_pc.jpg");
-    background-size: cover;
+    @include backimage("bg-mainVisual-pict_pc.jpg");
     background-position: top center;
     &__content{
       max-width: 1280px;
@@ -93,8 +99,9 @@
       &__btn{
         margin: 24px 10px 0 0;
         display: flex;
-        &__abtn{
-          width: 150px;
+        a{
+          margin-right: 15px;
+          width: 180px;
         }
       }
     }
@@ -164,10 +171,9 @@
 
 
   &__middle-image{
-    background-image: url("bg-topMiddleDl-pict.jpg");
+    @include backimage("bg-topMiddleDl-pict.jpg");
     background-position: bottom right;
     height: 400px;
-    background-size: cover;
     display: flex;
     align-items: center;
     &__content{
@@ -188,7 +194,8 @@
       }
       &__btn{
         a{
-          padding-right: 15px;
+          margin-right: 15px;
+          width: 180px;
         }
       }
     }
@@ -217,17 +224,16 @@
       transform: translateX(-50%);
     }
     &__lists{
-      max-width: calc(1040px + 20px);
-      width: 100%;
+      width: calc(100vw - 200px);
       margin: 0 auto;
       display: flex;
       &__list{
-        flex-direction: column;
         text-align: center;
         padding: 0 20px;
         &__img{
-          width: 100%;
+          width: 70%;
           text-align: center;
+          
           padding: 0 20px; 
         }
         &__title{
@@ -280,19 +286,13 @@
             text-decoration: none;
             &__img{
               width: 220px;
-              height: 150px;
-              position: relative;
-              overflow: hidden;
-              margin: 0;
-              z-index: auto;
+              height: 210px;
             }
             &__box{
               background-color: white;
               color: #333;
               padding: 16px;
               &__name{
-                overflow: hidden;
-                line-height: 1.5;
                 font-size: 16px;
                 text-align: left;
               }
@@ -312,11 +312,10 @@
   }
 
   &__lower-image{
-    background-image: url("bg-appBanner-pict.jpg");
+    @include backimage("bg-appBanner-pict.jpg");
+    background-position: center;
     padding: 100px 40px;
     position: relative;
-    background-size: cover;
-    background-position: center;
     &__content{
       text-align: center;
       color: white;
@@ -334,8 +333,9 @@
         display: flex;
         justify-content: center;
         margin: 20px auto 0;
-        a{
-          padding-right: 15px;
+        &__abtn{
+          margin-right: 15px;
+          width: 180px;
         }
       }
     }
@@ -395,9 +395,6 @@
     font-size: 18px;
     text-decoration: none;
     margin-bottom: 5px;
-  }
-  &__icon{
-    width: 60%;
   }
 }
 
