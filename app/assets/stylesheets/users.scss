@@ -1,3 +1,373 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+.body{
+  font-famiry:'Source Sans Pro';
+}
+.container{
+  background-color: rgb(245,245,245);
+.header{
+  text-align: center; 
+  display: flex;  
+  height: 128px;
+  padding-left: 350px;
+  h1{
+    margin: 40px 40px 0 ;
+    display: inline-block;
+  }
+  a{
+  }
+  ul.clearfix{
+    text-align:center;
+    display: flex;
+    padding-top: 60px;
+    padding-left: 80px;
+    li{
+      margin:0 40px 0 0;
+    }
+    }
+  }
+
+.main{
+  &__container{
+    width:700px;
+    margin:0 auto;
+
+    &__inputbox{
+      background-color: $mainWhiteColor;
+      padding: 24px 16px 0px;
+    }
+    &__inputbox2{
+      padding: 24px 0 40px;
+      background-color:$mainWhiteColor;
+    }
+    .form-group{
+      background-color:$mainWhiteColor;
+      margin:0 auto;
+      max-width: 343px;
+      padding-bottom:20px;
+
+      &__check-box {
+        margin: 16px 0 0;
+        position: relative;
+        display: flex;
+        background-color: $mainWhiteColor;
+      }
+      &__name{
+        padding-top: 20px;
+        display: flex;
+        background-color: $mainWhiteColor;
+        &__first-name{
+          width:50%;
+          margin-right:20px;
+        }
+        &__second-name{
+          width:50%;
+          margin-left: 20px;
+        }
+      }
+      &__identification{
+        padding-top: 20px;
+        background-color: $mainWhiteColor;
+      } 
+
+      &__birth-select-wrap{
+        display: flex;
+        width: 76px;
+        padding-top:20px;
+        background-color: $mainWhiteColor;
+        
+        &__birth-year{
+          background-color: $mainWhiteColor;
+          padding-right:5px;
+        }
+        &__birth-month{
+          background-color: $mainWhiteColor;
+          padding:0 5px 0 10px;
+        }
+        &__birth-day{
+          background-color: $mainWhiteColor;
+          padding:0 5px 0 10px;
+        }
+        
+      }
+      &__next-page-navi{
+        background-color: $mainWhiteColor;
+        max-width:550px;
+        text-align: right;
+        padding:0 0 20px;
+      }
+  
+      &__recapture-term{
+        margin:0 auto;
+        max-width: 343px;
+        background-color: whitesmoke;
+        a{
+          background-color: whitesmoke;
+        }
+      }
+      form{
+        background-color: $mainWhiteColor;
+      }
+      input{
+        height: 48px;
+        padding:10px 16px 8px;
+        border-radius: 4px;
+        border:1px solid #ccc;
+     }
+      input#sex{
+        top:50%;
+        left:0;
+        width:20px;
+        height:20px;
+        border-radius:2px;
+        background-color: $mainWhiteColor;
+        border: 1px solid #ccc;
+        font-size: 10px;
+        line-height: 17px;
+        text-align:center;
+        color: #fff;
+        vertical-align: middle;
+      }
+     #first-name{
+      width:100%
+     }
+     #second-name{
+      width:100%;
+     }
+      select{
+       width:80px;
+       height:48px;
+       background-color: $mainWhiteColor;
+       border-radius: 4px;
+       border:1px solid #ccc;
+
+     }
+      span{
+        background-color:$mainRedColor;
+        color: $mainWhiteColor;
+        border-radius: 2px;
+      }
+      span2{
+        background-color: $mainWhiteColor;
+        line-height:50px;
+      }
+      input#_sex{
+        top: 50px;
+        left: 0;
+        z-index:1;
+        width:20px;
+        height:20px;
+        border-radius: 2px;
+        background-color: $mainWhiteColor;
+        border:1px solid #ccc;
+        font-size:10px;
+      }
+      p.password-sentence{
+        background-color: $mainWhiteColor;
+      }
+      p.how_to_write{
+       margin: 8px 0 0
+      }
+      .checkbox{
+        width: 20px;
+        
+      }
+    }
+    .btn-red{
+      text-align: center;
+      padding: 24px 0 0;
+      background-color: $mainWhiteColor;
+
+      input{
+        width:100%;
+        background-color:$mainRedColor;
+        color:$mainWhiteColor;
+        cursor: pointer;
+      }
+
+    }    
+
+    #password-error{
+      background-color: $mainWhiteColor;
+    }
+    p,p2,form,input,label,li,{
+      background-color: $mainWhiteColor;
+    }
+    a{
+      color:#0099e8;
+      text-decoration:none;
+      background-color: $mainWhiteColor;
+    }
+    i.icon-arrow-right{
+      display: inline-block;
+      font-weight: 'icon-fort';
+      speak: none;
+      font-style:normal;
+      font-weight:400;
+      font-variant: normal;
+      line-height:1;
+      cotent: '\e005';
+    }
+    p4.register-info{
+      background-color: $mainWhiteColor;
+    }
+    p5.recature-info{
+      background-color: whitesmoke;
+    }
+    h3{
+      background-color: $mainWhiteColor;
+      font-weight: bold;
+    }
+    label.password{
+      position: absolute;
+      margin:2px 30px;
+    }
+    .date_select{
+      background-color: $mainWhiteColor;
+    }
+ 
+    h2{
+      font-size: 22px;
+      padding: 32px;
+      background-color: $mainWhiteColor;
+      text-align: center;
+    }
+    .form-box{
+      background-color: $mainWhiteColor;
+      max-width: 343px;
+      margin:0 auto;
+      .form-group{
+        margin: 0;
+      }    
+      #form{
+        background-color: $mainWhiteColor;
+      }
+    
+    }
+  }
+}
+.footer{
+  margin: 0 auto;
+  width:456px;
+  height:220px;
+  padding:40px 0 0;
+    
+  }
+
+  ul{
+    display: flex;
+    justify-content: space-between;
+    font-size:12px;
+  }
+  a.company-logo{
+    margin: 180px;
+  }
+.footer p{
+  text-align :center;
+}
+}
+
+.session-container{
+  background-color: whitesmoke;
+  &__header{
+    text-align: center; 
+    display: flex;  
+    height: 128px;
+    padding-left: 550px;
+    h1{
+      margin: 40px 40px 0 ;
+      display: inline-block;
+    }
+  }
+}
+
+
+.session-main{
+  width:456px;
+  margin:0 auto;
+  &__login-panel{
+    
+    background-color: $mainWhiteColor;
+    text-align: center;
+    &__login-no-account{
+      padding: 40px 64px;
+      a{
+        display: block;
+        margin: 8px 0 0;
+        background-color: #0099e8;
+        color: $mainWhiteColor;
+        line-height: 40px;      
+      }
+    }
+    &__login-form-inner{
+      padding: 32px 64px;
+      button#facebook-login.btn-default.btn-sns.btn-sns-facebook{
+        @include button();
+        background-color: #385185;        
+        color: $mainWhiteColor;
+      
+      }
+      button#google-login.btn-default.btn-sns.btn-sns-google{
+        @include button();
+        background-color: $mainWhiteColor;
+        border: #979797 solid 1px;
+      }
+    }
+
+    &__login-session-form{
+      padding: 40px 64px;
+      &__login-form-inner{
+        &__form-group{
+          padding: 0 0 20px;
+        }
+     button.login-submit.session-login.btn-red{
+      background-color: $mainRedColor;
+      color: $mainWhiteColor;
+      @include button();
+      margin: 0 0 40px
+     }
+      }
+      a.forget-password{
+        margin:40px 0 0;
+        text-decoration: none;
+        color:#0099e8;
+
+      }      
+      
+    }
+  input#_name{
+    height: 48px;
+    padding:10px 16px 8px;
+    border-radius: 4px;
+    border:1px solid #ccc;
+    width:100%;
+    }
+  }
+
+}
+p.session-no-account-text{
+  font-size:14px;
+}
+
+.footer{
+  margin: 0 auto;
+  width:456px;
+  height:220px;
+  padding:40px 0 0;    
+  }
+
+  ul{
+    display: flex;
+    justify-content: space-between;
+    font-size:12px;
+  }
+  a.company-logo{
+    margin: 180px;
+  }
+.footer p{
+  text-align :center;
+}
+
+
+
