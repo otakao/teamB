@@ -16,6 +16,7 @@
     display: inline-block;
   }
   a{
+    padding-top:40px;
   }
   ul.clearfix{
     text-align:center;
@@ -26,7 +27,7 @@
       margin:0 40px 0 0;
     }
     }
-  }
+}
 
 .main{
   &__container{
@@ -252,22 +253,19 @@
   width:456px;
   height:220px;
   padding:40px 0 0;
-    
+  &__nav-company-logo{
+    text-align: center;   
   }
-
   ul{
     display: flex;
     justify-content: space-between;
     font-size:12px;
   }
-  a.company-logo{
-    margin: 180px;
+  p{
+   text-align :center;
   }
-.footer p{
-  text-align :center;
 }
 }
-
 .session-container{
   background-color: whitesmoke;
   &__header{
@@ -276,9 +274,13 @@
     height: 128px;
     padding-left: 550px;
     h1{
-      margin: 40px 40px 0 ;
       display: inline-block;
+      margin-left:25px;
     }
+    a{
+      padding-top:40px;
+    }
+
   }
 }
 
@@ -320,7 +322,30 @@
       &__login-form-inner{
         &__form-group{
           padding: 0 0 20px;
+          &__login-captcha{
+            &__style{
+              width: 304px;
+              height: 78px;
+            }
+          }
+          textarea#g-recaptcha-response.g-recaptcha-response{
+            width: 250px;
+            height: 40px;
+            border: 1px solid rgb(193, 193, 193);
+            margin: 10px 25px;padding: 0px;
+            resize: none;
+            display: none;
+          }
+            %iframe{
+              display: none;
+            }
+                  
         }
+      }
+    
+    }
+
+
      button.login-submit.session-login.btn-red{
       background-color: $mainRedColor;
       color: $mainWhiteColor;
@@ -343,9 +368,9 @@
     border:1px solid #ccc;
     width:100%;
     }
-  }
+  
 
-}
+
 p.session-no-account-text{
   font-size:14px;
 }
@@ -355,19 +380,15 @@ p.session-no-account-text{
   width:456px;
   height:220px;
   padding:40px 0 0;    
+  &__nav-company-logo{
+    text-align: center;
   }
-
-  ul{
+}
+ ul{
     display: flex;
     justify-content: space-between;
     font-size:12px;
   }
-  a.company-logo{
-    margin: 180px;
-  }
 .footer p{
-  text-align :center;
-}
-
-
-
+    text-align :center;
+  }
