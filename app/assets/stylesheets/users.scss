@@ -43,7 +43,8 @@
       background-color:$mainWhiteColor;
     }
     .form-group{
-      background-color:$mainWhiteColor;
+
+      background-color: white;
       margin:0 auto;
       max-width: 343px;
       padding-bottom:20px;
@@ -52,21 +53,31 @@
         margin: 16px 0 0;
         position: relative;
         display: flex;
-        background-color: $mainWhiteColor;
+        background-color: white;
       }
       &__name{
         padding-top: 20px;
-        display: flex;
-        background-color: $mainWhiteColor;
-        &__first-name{
-          width:50%;
-          margin-right:20px;
+        background-color: white;
+        &__kanji,&__kana{
+          display: flex;
+          background-color: white;
+          padding-bottom: 20px;
+          &__first-name{
+            width:50%;
+            margin-right:20px;
+          }
+          &__second-name{
+            width:50%;
+          }
+   
         }
         &__second-name{
           width:50%;
           margin-left: 20px;
+          padding-top:24px;
+          background-color: white;
         }
-      }
+      } 
       &__identification{
         padding-top: 20px;
         background-color: $mainWhiteColor;

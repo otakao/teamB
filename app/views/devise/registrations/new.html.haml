@@ -14,61 +14,46 @@
         %h2.form-title 会員情報入力  
  
         .main__container__inputbox
-          .form-group
-            %label ニックネーム
-            %span.form-require 必須
-          
+          .form-group          
             =form_for root_path do |form|
-              =form.text_field :name, placeholder: "例）ニックネーム", size: "40x20"
-    
-          .form-group
-            %label メールアドレス
-            %span.form-require 必須
-                        
-            =form_for root_path do |form|
-              =form.email_field :name, placeholder: "PC・携帯どちらでも可", size: "40x20"
-
-          .form-group
-            %label パスワード
-            %span.form-require 必須
-                        
-            =form_for root_path do |form|
-              =form.text_field :name, placeholder: "7文字以上の半角英数字", size: "40x20"
-            %p.how_to_write
-              * 英字と数字の両方を含めて設定してください
-            .form-group__check-box  
-              =form_for root_path do |form|
-                =form.check_box :checkbox,id: :sex   
+              .form-group
+              %label ニックネーム
+              %span.form-require 必須
+              =form.text_field :nickname, placeholder: "例）ニックネーム", size: "40x20"
+              .form-group
+              %label メールアドレス
+              %span.form-require 必須
+              =form.email_field :email, placeholder: "PC・携帯どちらでも可", size: "40x20"
+              .form-group
+              %label パスワード
+              %span.form-require 必須
+              =form.text_field :password, placeholder: "7文字以上の半角英数字", size: "40x20"
+              %p.how_to_write
+                * 英字と数字の両方を含めて設定してください
+              .form-group__check-box  
               %label.password パスワードを表示する
-                
-            .form-group__identification           
+              =form.check_box :checkbox,id: :sex   
+              .form-group__identification           
               %h3
                 本人確認
               %p2 
                 安心・安全にご利用いただくために、お客様の本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-          
-          .form-group
-            %label お名前（全角）
-            %span.form-require 必須                          
-            .form-group__name
-              .form-group__name__first-name
-                =form_for root_path do |form|
-                  =form.text_field :name, id:"first-name",placeholder: "例）山田", size: "40x20"
-              .form-group__name__second-name
-                =form_for root_path do |form|
-                  =form.text_field :name, id:"second-name",placeholder: "例）彩", size: "40x20"
-
-          .form-group
-            %label お名前カナ（全角）
-            %span.form-require 必須
-            .form-group__name
-              .form-group__name__first-name
-                =form_for root_path do |form|
-                  =form.text_field :name, id:"first-name",placeholder: "例）ヤマダ", size: "40x20"
-              .form-group__name__second-name
-                =form_for root_path do |form|
-                  =form.text_field :name, id:"second-name",placeholder: "例）アヤ", size: "40x20"
-
+              .form-group__name
+              %label お名前（全角）
+              %span.form-require 必須
+              .form-group__name__kanji
+                .form-group__name__kanji__first-name
+                  =form.text_field :first_name, id:"first-name",placeholder: "例）山田", size: "40x20"
+                .form-group__name__kanji__second-name
+                  =form.text_field :last_name, id:"second-name",placeholder: "例）彩", size: "40x20"
+              %label お名前カナ（全角）
+              %span.form-require 必須
+              .form-group__name__kana
+                .form-group__name__kana__first-name              
+                  =form.text_field :first_name_furigana, id:"first-name",placeholder: "例）ヤマダ", size: "40x20"
+                .form-group__name__kana__second-name
+                  =form.text_field :last_name_furigana, id:"second-name",placeholder: "例）アヤ", size: "40x20"
+   
           .form-group
             %label 生年月日
             %span.form-require 必須                         
