@@ -12,10 +12,6 @@ class User < ApplicationRecord
   validates :last_name, :first_name, format: { with: /\A[ぁ-んァ-ヶー一-龠]+\z/}
   validates :last_name_furigana, :first_name_furigana, format: { with: /\A[あ-ん゛゜ぁ-ぉゃ-ょー]+\z/}
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
-  
-  
-  
-
 
 
   # Include default devise modules. Others available are:
