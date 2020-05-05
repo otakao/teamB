@@ -9,13 +9,13 @@
           %li 電話番号認証            
           %li 完了
             
-    .main
+     .main
       .main__container
         %h2.form-title 会員情報入力  
  
-        .main__container__inputbox
-          .form-group          
-            =form_for root_path do |form|
+        =form_with url: user_registration_path, local: true do |form|
+          .main__container__inputbox
+            .form-group          
               .form-group
               %label ニックネーム
               %span.form-require 必須
@@ -27,7 +27,7 @@
               .form-group
               %label パスワード
               %span.form-require 必須
-              =form.text_field :password, placeholder: "7文字以上の半角英数字", size: "40x20"
+              =form.password_field :password, placeholder: "7文字以上の半角英数字", size: "40x20"
               %p.how_to_write
                 * 英字と数字の両方を含めて設定してください
               .form-group__check-box  
@@ -252,9 +252,8 @@
           .form-group
             %p3.form-info-text
             「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
-            .btn-red
-              =form_for root_path do |form|
-                =form.submit "次へ進む"
+            
+              =form.submit "次へ進む",class: "btn-red"
 
           .form-group__next-page-navi
             %p4.register-info
