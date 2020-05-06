@@ -27,18 +27,18 @@
   &__container{
     width: 700px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: $mainWhiteColor;
     h2{
       font-size:22px;
       padding: 32px;
       text-align: center;
-      background-color: #fff;
+      background-color: $mainWhiteColor;
 
     }
   }
   section.item-content{
     text-align: center;
-    background-color: #fff;
+    background-color: $mainWhiteColor;
     padding: 32px 16px;
     border-top: 1px solid #f5f5f5;
   }
@@ -48,18 +48,18 @@
     
     &__box{
       display: flex;
-      background-color: #fff;
+      background-color: $mainWhiteColor;
       h3{
-        background-color: #fff;
+        background-color: $mainWhiteColor;
         height:80px;
         width: 80px;
         min-width:80px;
       }
       &__detail{
         margin-left:16px;
-        background-color: #fff;
+        background-color: $mainWhiteColor;
         p.item-content__inner__box__detail__name{
-          background-color: #fff;
+          background-color: $mainWhiteColor;
           font-size:14px;
           margin:0;
           padding:0 0 8px;
@@ -67,17 +67,17 @@
           text-align: left;
         }
         p.item-content__inner__box__detail__price{
-          background-color: #fff;
+          background-color: $mainWhiteColor;
           margin: 0;
           text-align: left;
           font-size: 15px;
 
         }
         span{
-          background-color: #fff;
+          background-color: $mainWhiteColor;
         }
         span.item-shipping-fee{
-          background-color:#fff;
+          background-color:$mainWhiteColor;
           font-size: 12px;
         }
       }
@@ -85,7 +85,7 @@
 
   }  
   section.item-content2{
-    background-color: #fff;
+    background-color: $mainWhiteColor;
     padding: 32px 16px 48px;
     text-align: center;
     border-top: 1px solid #f5f5f5;
@@ -94,9 +94,9 @@
   .item-content2__inner{
     max-width: 343px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: $mainWhiteColor;
     &__form{
-      background-color: #fff;
+      background-color: $mainWhiteColor;
     }
     ul.item-content2-price{
       display: table;
@@ -109,16 +109,16 @@
         display: table-cell;
         padding: 0;
         text-align: left;
-        background-color: #fff;
+        background-color: $mainWhiteColor;
       }
       .item-content2-price-price-amount{
         display: table-cell;
         padding:0;
         text-align: right;
-        background-color: #fff;
+        background-color: $mainWhiteColor;
         span.amount-price{
          font-size: 30px;
-         background-color: #fff;
+         background-color: $mainWhiteColor;
         }
       }
     }
@@ -128,7 +128,7 @@
       .item-content2-point-inner{
         text-align: left;
         position: relative;
-        background-color: #fff;
+        background-color: $mainWhiteColor;
         input#point{
           color: #ccc;
           background-color: #ccc;
@@ -140,7 +140,7 @@
           font-size: 14px;
           font-weight: 400;
           vertical-align: middle;
-          background-color: #fff;
+          background-color: $mainWhiteColor;
         }
       }
       
@@ -149,15 +149,15 @@
   }
   section.payment-info{
     padding: 32px 0;
-    background-color: #fff;
+    background-color: $mainWhiteColor;
   }
     .payment-info-inner{
       max-width:343px;
       margin: 0 auto;
-      background-color: #fff;
+      background-color: $mainWhiteColor;
     }
       .content{
-        background-color: #fff;
+        background-color: $mainWhiteColor;
         background-repeat: no-repeat;
         margin: 0;
         padding: 0;
@@ -166,7 +166,7 @@
           margin: 0;
           font-size:14px;
           float: left;
-          background-color: #fff;
+          background-color: $mainWhiteColor;
           display: block;
         }
         .right-content{
@@ -178,30 +178,30 @@
         a.right-content{
           text-decoration: none;
           color: #0099e8;
-          background-color: #fff;
+          background-color: $mainWhiteColor;
         }
       
      
       p.payment-card-info{
         line-height: 1.5;
-        background-color: #fff;
+        background-color: $mainWhiteColor;
         text-align: left;
         margin:8px 0 0;
         font-size: 14px;
       }
       figure.credit-card-logo{
         margin-top: 8px;
-        background-color: #fff;
+        background-color: $mainWhiteColor;
         text-align: left;
         a{
           vertical-align: middle;
-          background-color: #fff;
+          background-color: $mainWhiteColor;
 
         }
       }
       section.delivery-info{
         padding: 32px 0;
-        background-color: #fff;
+        background-color: $mainWhiteColor;
         text-align: left;
         transition:  all;
         margin: 0;
@@ -210,27 +210,27 @@
       .delivery-info__inner{
         max-width: 343px;
         margin: 0 auto;
-        background-color: #fff;
+        background-color: $mainWhiteColor;
         h4{
           margin: 0;
           font-size: 14px;
-          background-color: #fff;
+          background-color: $mainWhiteColor;
             
         }
         a{
           text-decoration: none;
           color: #0099e8;
-          background-color: #fff;
+          background-color: $mainWhiteColor;
         }
       }
         section.purchase-button{
           padding-top: 32px;
-          background-color: #fff;
+          background-color: $mainWhiteColor;
         }
         input.btn-submit{
           border: 1px solid #888;
           background-color: #888;
-          color: #fff;
+          color: $mainWhiteColor;
           display: block;
           width: 100%;
           line-height:48px;
