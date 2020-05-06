@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+}
+.body{
+  font-family:'Source Sans Pro';
+  position: relative;
+  min-height: 100%;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+}
+.confirmation-container{
+  background-color: rgb(245,245,245);
+  &__header{
+    height: 128px;
+    text-align: center;
+    h1{
+      display: inline-block;
+      margin: 40px 0 0;
+    }
+  }
+}
+
+.confirmation-main{
+  background-color: rgb(245,245,245);
+  display: block;
+  &__container{
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    h2{
+      font-size:22px;
+      padding: 32px;
+      text-align: center;
+      background-color: #fff;
+
+    }
+  }
+  section.item-content{
+    text-align: center;
+    background-color: #fff;
+    padding: 32px 16px;
+    border-top: 1px solid #f5f5f5;
+  }
+  .item-content-inner{
+    max-width:343px;
+    margin: 0 auto;
+    
+    &__box{
+      display: flex;
+      background-color: #fff;
+      h3{
+        background-color: #fff;
+        height:80px;
+        width: 80px;
+        min-width:80px;
+      }
+      &__detail{
+        margin-left:16px;
+        background-color: #fff;
+        p.item-content__inner__box__detail__name{
+          background-color: #fff;
+          font-size:14px;
+          margin:0;
+          padding:0 0 8px;
+          line-height:1.5;
+          text-align: left;
+        }
+        p.item-content__inner__box__detail__price{
+          background-color: #fff;
+          margin: 0;
+          text-align: left;
+          font-size: 15px;
+
+        }
+        span{
+          background-color: #fff;
+        }
+        span.item-shipping-fee{
+          background-color:#fff;
+          font-size: 12px;
+        }
+      }
+    }
+
+  }  
+  section.item-content2{
+    background-color: #fff;
+    padding: 32px 16px 48px;
+    text-align: center;
+    border-top: 1px solid #f5f5f5;
+
+  }
+  .item-content2__inner{
+    max-width: 343px;
+    margin: 0 auto;
+    background-color: #fff;
+    &__form{
+      background-color: #fff;
+    }
+    ul.item-content2-price{
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      li.item-content2-price-content{
+        display: table-row;
+      }
+      .item-content2-price-textbox{
+        display: table-cell;
+        padding: 0;
+        text-align: left;
+        background-color: #fff;
+      }
+      .item-content2-price-price-amount{
+        display: table-cell;
+        padding:0;
+        text-align: right;
+        background-color: #fff;
+        span.amount-price{
+         font-size: 30px;
+         background-color: #fff;
+        }
+      }
+    }
+    ul.item-content2-point-exercise{
+      color: #888;
+      margin:24px 0 32px;
+      .item-content2-point-inner{
+        text-align: left;
+        position: relative;
+        background-color: #fff;
+        input#point{
+          color: #ccc;
+          background-color: #ccc;
+        }  
+        label{
+          position: relative;
+          z-index: 2;
+          padding: 0 0 28px;
+          font-size: 14px;
+          font-weight: 400;
+          vertical-align: middle;
+          background-color: #fff;
+        }
+      }
+      
+    }
+    
+  }
+  section.payment-info{
+    padding: 32px 0;
+    background-color: #fff;
+  }
+    .payment-info-inner{
+      max-width:343px;
+      margin: 0 auto;
+      background-color: #fff;
+    }
+      .content{
+        background-color: #fff;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+      }
+        h3{
+          margin: 0;
+          font-size:14px;
+          float: left;
+          background-color: #fff;
+          display: block;
+        }
+        .right-content{
+          display: block;
+          text-align: right;
+         
+          
+        }
+        a.right-content{
+          text-decoration: none;
+          color: #0099e8;
+          background-color: #fff;
+        }
+      
+     
+      p.payment-card-info{
+        line-height: 1.5;
+        background-color: #fff;
+        text-align: left;
+        margin:8px 0 0;
+        font-size: 14px;
+      }
+      figure.credit-card-logo{
+        margin-top: 8px;
+        background-color: #fff;
+        text-align: left;
+        a{
+          vertical-align: middle;
+          background-color: #fff;
+
+        }
+      }
+      section.delivery-info{
+        padding: 32px 0;
+        background-color: #fff;
+        text-align: left;
+        transition:  all;
+        margin: 0;
+      }
+
+      .delivery-info__inner{
+        max-width: 343px;
+        margin: 0 auto;
+        background-color: #fff;
+        h4{
+          margin: 0;
+          font-size: 14px;
+          background-color: #fff;
+            
+        }
+        a{
+          text-decoration: none;
+          color: #0099e8;
+          background-color: #fff;
+        }
+      }
+        section.purchase-button{
+          padding-top: 32px;
+          background-color: #fff;
+        }
+        input.btn-submit{
+          border: 1px solid #888;
+          background-color: #888;
+          color: #fff;
+          display: block;
+          width: 100%;
+          line-height:48px;
+          font-size:14px;
+        }
+
+  
+}
+
+.confirmation-footer{
+  background-color: rgb(245,245,245);
+  &__content{
+    margin: 0 auto;
+    width:456px;
+    height:220px;
+    padding:40px 0 0;      
+    &__nav-company-logo{
+      text-align: center;
+    }   
+  }
+  ul{
+    display: flex;
+    justify-content: space-between;
+    font-size:12px;
+  }
+  p{
+    text-align :center;
+  }
+}
+
+
+
+ 
+
+
+
+
+
+
