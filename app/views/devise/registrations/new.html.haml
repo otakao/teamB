@@ -59,6 +59,7 @@
             %span.form-require 必須                         
             .form-group__birth-select-wrap
               .form-group__birth-select-wrap__birth-year
+<<<<<<< Updated upstream
                 %select{value: "year"}>
                   %option{value: ""} -
                   %option{value: "1900"} 1900
@@ -245,6 +246,9 @@
                   %option{value: "31"} 31
               %span2 日
 
+=======
+                = raw sprintf(form.date_select(:birthday,prompt:"--",use_month_numbers: true,start_year: Time.now.year,end_year: (Time.now.year - 80),date_separator: '%s'),'年 ', '月 ') + '日'
+>>>>>>> Stashed changes
 
             *本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。            
 
