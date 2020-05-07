@@ -186,19 +186,16 @@
         
       }
     }
-    .btn-red{
-      text-align: center;
-      padding: 24px 0 0;
-      background-color: $mainWhiteColor;
-
-      input{
-        width:100%;
-        background-color:$mainRedColor;
-        color:$mainWhiteColor;
-        cursor: pointer;
+      input.btn-red{
+      width: 100%;
+      margin: 24px 0 0;
+      background-color: $mainRedColor;
+      border: 1px solid $mainRedColor;
+      color:$mainWhiteColor;
+      cursor: pointer;
       }
 
-    }    
+        
 
     #password-error{
       background-color: $mainWhiteColor;
