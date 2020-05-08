@@ -93,30 +93,30 @@
                   width: 100%;
                 }
 
-                  &__sub-pictures{
-                    width: 560px;
+                &__sub-pictures{
+                  width: 560px;
+                  height: 87px;
+                  justify-content: center;
+                  margin-top: 10px;
+                  display: flex;
+
+
+                  &__list1{
+                    width: 140px;
                     height: 87px;
-                    justify-content: center;
-                    margin-top: 10px;
-                    display: flex;
 
+                  }
+                  &__list2{
+                    width: 140px;
+                    height: 87px;
 
-                    &__list1{
-                      width: 140px;
-                      height: 87px;
+                  }
 
-                    }
-                    &__list2{
-                      width: 140px;
-                      height: 87px;
+                  &__list3{
+                    width: 140px;
+                    height: 87px;
 
-                    }
-
-                    &__list3{
-                      width: 140px;
-                      height: 87px;
-
-                    }
+                  }
                }
             }
           }
@@ -148,14 +148,14 @@
 
 
 
-          &__text{
-          ine-height: 1.5;
+        &__text{
+            line-height: 1.5;
             font-size: 18px;
             margin-bottom: 30px;
             height: 162px;
           }
 
-          &__main-table{
+        &__main-table{
             width: 620px;
             height: 426px;
             margin-bottom: 20px;
@@ -309,24 +309,35 @@
           
           
           
-          &__option{
-          height: 48px;
-          display: flex;
-          justify-content: space-between; 
+    .item-main__show-item__main-content__content__item__option{
+            height: 48px;
+            display: flex;
+            justify-content: space-between; 
 
             ul{
-              width: 135px;
               height: 38px;
               margin-top: 10px;
 
               li.likeBtn{
-                margin-right: auto;
-                padding: 6px 10px;
-                border-radius: 40px;
-                color: #3CCACE;
-                border: 1px solid #ffb340;
+                a{
+                  display: inline-block;
+                  margin-right: auto;
+                  padding: 6px 10px 6px 50px;
+                  border-radius: 40px;
+                  color: #3CCACE;
+                  border: 1px solid #ffb340;
+                  text-decoration: none;
+                  font-size: 15px;
+                }
+
+                a:hover{
+                  box-shadow: 0 0 10px #ffb340;
+                }
+
 
                 .icon{
+                  color:  #3CCACE;
+                  font-size: 18px;
                   ::before{
                     content: "\f005";
                   }
@@ -397,14 +408,14 @@
         }
       
       
-      ul.link{
+      &__link{
         width: 700px;
         height: 24px;
         list-style: none;
+        display: flex;
         justify-content: space-between;
 
         li.left{
-          width: 75px;
           
           i.icon{
 
@@ -412,7 +423,7 @@
         } 
     
          li.right{
-          width: 91px;
+
 
            i.icon{
              
