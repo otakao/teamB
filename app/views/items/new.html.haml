@@ -94,26 +94,25 @@
               %li.likeBtn
                 %i.fa.fa-star.icon
                   "お気に入り 0"
-            %ul.bad-goods
-              %li.button
-                -# = link_to "不適正な商品の通報" ,"root_path", class:"btn" do
-                  -# %i.fa.fa-flag.icon
-                    "不適正な商品の通報"
-        .item-main__show-item__main-content__content__comment
-          .form
-            -# = form_with url:root_path local: true do |form|
-            -#   .comments
-            .textarea 
-            %p.notice
-              "相手のことを考え丁寧なコメントを心がけましょう。
-              不快な言葉遣いなどは利用制限や退会処分となることがあります。"
-            .comment-button
-      %ul.item-main__show-item__main-content__link 
-        %li.left
-          = link_to "前の商品" ,root_path 
-            %i.fa.fa-angle-right.icon
-        %li.right
-          = link_to "後ろの商品" ,root_path 
+            -# %ul.bad-goods
+            -#   %li.button
+            -#     -# = link_to "不適正な商品の通報" ,"root_path", class:"btn" do
+            -#       -# %i.fa.fa-flag.icon
+            -#         "不適正な商品の通報"
+        -# .item-main__show-item__main-content__content__comment
+        -#     %form  url:root_path local: true do |form|
+          
+        -#     .textarea 
+        -#     %p.notice
+        -#       "相手のことを考え丁寧なコメントを心がけましょう。
+        -#       不快な言葉遣いなどは利用制限や退会処分となることがあります。"
+        -#     .comment-button
+        %ul.item-main__show-item__main-content__content__link 
+          %li.left
+            %i.fa.fa-angle-left.icon
+            = link_to "前の商品" ,root_path           
+          %li.right
+            = link_to "後ろの商品" ,root_path 
             %i.fa.fa-angle-right.icon
 
       .item-main__show-item__main-content__more-item

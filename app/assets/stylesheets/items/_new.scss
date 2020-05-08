@@ -397,25 +397,26 @@
         }
       
       
-      ul.link{
+      &__link{
         width: 700px;
         height: 24px;
         list-style: none;
         justify-content: space-between;
-
+        display: flex;
+        
         li.left{
-          width: 75px;
+          font
           
           i.icon{
-
+            color: #3CCACE;
           }
         } 
     
-         li.right{
-          width: 91px;
+        li.right{
+          color: #3CCACE;
 
            i.icon{
-             
+            color: #3CCACE;
            }
          }
       
