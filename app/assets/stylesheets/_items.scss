@@ -401,6 +401,66 @@
   }
 }
 
+// .foo{
+//   box-sizing: border-box;
+//   margin: 0 auto;
+//   display: block;
+//   clear: both;
+//   content: "";
+  
+// .narrow-downitem__category{
+//   width: 100%;
+//   border-top: 1px solid #eee;
+//   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+//   position: relative;
+//   padding: 0 60px;
+
+
+
+//   &__list{
+//     height: 54px;
+//     padding: 17px 0 16px;
+//     width: 1040px;
+//     font-size: 14px;
+//     list-style: none;
+//     display: inline-block;
+//     text-decoration: none;
+//     color: #333; 
+
+//     span{
+//       padding: 0 10px 0 0;
+//       float: left; 
+//       text-align: center;
+
+//       a{
+//         font-size: 14px; 
+//       }
+
+//       i{
+//         font-size: 14px;
+//       }
+//     }
+//   }
+// } 
+
+
+// .item-main{
+//   width: 100%;
+//   height: calc(100%-1804px);
+//   display: flex;
+
+//   &__show-item{
+//     padding: 40px;
+//     margin: 0 auto;
+//   }
+  
+//     &__main-content{
+//       width: 700px;
+//       margin: 0 auto; 
+//     }
+
+// } 
+
 
 
 

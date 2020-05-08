@@ -1,0 +1,86 @@
+.furima-header
+  .furima-header__content
+    .furima-header__content__main
+      %a{href: "/"}
+        = image_tag "logo.png", class:"furima-header__content__main__logo"
+      .furima-header__content__main__search
+        = form_with url:root_path do |form|
+          = form.text_field :name, placeholder: "キーワードから探す", class: "furima-header__content__main__search__input"
+          = image_submit_tag ("icon-search1.png"), class: "furima-header__content__main__search__icon", value: ""
+    .furima-header__content__main__btn
+      .furima-header__content__main__btn__left
+        %a.furima-header__content__main__btn__left__category{href: "#"} カテゴリー
+        %a.furima-header__content__main__btn__left__brand{href: "#"} ブランド
+      .furima-header__content__main__btn__right
+        %a.furima-header__content__main__btn__right__login{href: "#"} ログイン
+        %a.furima-header__content__main__btn__right__signup{href: "#"} 新規会員登録
+
+.narrow-down
+  %ul.narrow-down__category
+    %li.narrow-down__category__list
+      %a{:href => "/"} FURIMA
+    %li.narrow-down__category__list
+      %i.fa.fa-angle-right \f105
+    %li.narrow-down__category__list
+      %a(href="#") ベビー・キッズ
+    %li.narrow-down__category__list
+      %i.fa.fa-angle-right \f105
+    %li.narrow-down__category__list
+      %a(href="#") ベビー服(男女兼用)~95cm
+    %li.narrow-down__category__list
+      %i.fa.fa-angle-right \f105
+    %li.narrow-down__category__list
+      %a(href="#") アウター
+    %li.narrow-down__category__list
+      %i.fa.fa-angle-right \f105
+    %li.narrow-down__category__list
+      %a(href="#") product3
+
+.item-main
+  .item-main__show-item
+    .item-main__show-item__main-content
+      .item-main__show-item__main-content__content
+        .item-main__show-item__main-content__content__item
+          %h.item-main__show-item__main-content__content__item__name
+          .item-main__show-item__main-content__content__item__picture
+          .item-main__show-item__main-content__content__item__price
+          .item-main__show-item__main-content__content__item__text
+          .item-main__show-item__main-content__content__item__table
+          .item-main__show-item__main-content__content__item__option
+        .item-main__show-item__main-content__content__comment
+    .item-main__show-item__main-content__link
+    .item-main__show-item__main-content__more-item
+
+.main-banner 
+  .main-banner__banner
+    %h2.main-banner__banner__title "だれでもかんたん、人生を変えるフリマアプリ"
+    %h1.main-banner__banner__text "今すぐ無料ダウンロード！"
+    .main-banner__banner__icon
+      %a(href="#" App Stre)
+      %a(href="#" Google Play)
+
+.footer
+  %ul.footer__contents
+    %li.footer__contents__lift
+      %h2.footer__contents__lift__top FURIMAについて
+      %ul
+        %li
+          %a(href="#") 会社概要（運営会社）
+        %li
+          %a(href="#") プライバシーポリシー
+        %li
+          %a(href="#") FURIMA利用規約
+        %li
+          %a(href="#") ポイントに関する特約
+    %li.footer__contents__center
+      %h2.footer__contents__center__top FURIMAを見る
+
+    %li.footer__contents__right
+
+
+    
+    
+    
+    
+
+      

@@ -90,7 +90,8 @@
         %h3.furima-main__pickup__content__link__title 新規投稿商品
     .furima-main__pickup__content__lists
       .furima-main__pickup__content__lists__list
-        %a.furima-main__pickup__content__lists__list__link{href: "#"}
+        %a.furima-main__pickup__content__lists__list__link
+        = link_to new_item_path do
           .furima-main__pickup__content__lists__list__link__img
             %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"}
           .furima-main__pickup__content__lists__list__link__box
