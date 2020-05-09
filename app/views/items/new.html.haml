@@ -66,9 +66,10 @@
                 %tr
                   %th カテゴリー
                   %td 
-                    = link_to "ベビー・キッズ","root_path", class:"category1"
-                    = link_to "ベビー服(男女兼用)~95cm","root_path", class:"category2"
+                    = link_to "ベビー・キッズ","root_path", class:"category1"             
+                    = link_to "ベビー服(男女兼用)~95cm","root_path", class:"category2"             
                     = link_to "アウター","root_path", class:"category3"
+            
                 %tr
                   %th ブランド
                   %td
@@ -115,13 +116,16 @@
               = link_to "後ろの商品" ,root_path 
               %i.fa.fa-angle-right.icon
 
-      .item-main__show-item__main-content__more-item
+      .item-main__show-item__main-content__content__more-item
+        %i.baby-item
+        = link_to "ベビー・キッズをもっと見る" ,root_path
+
 
 .main-banner  
-  .main-banner__banner
-    %h2.main-banner__banner__title "だれでもかんたん、人生を変えるフリマアプリ"
-    %h1.main-banner__banner__text "今すぐ無料ダウンロード！"
-    .main-banner__banner__icon
+  .main-banner__center
+    %h2.title1 "だれでもかんたん、人生を変えるフリマアプリ"
+    %h1.title2 "今すぐ無料ダウンロード！"
+    .main-banner__center__icon
       %a(href="#" App Stre)
       %a(href="#" Google Play)
 
