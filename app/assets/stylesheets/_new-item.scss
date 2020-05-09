@@ -1,0 +1,195 @@
+.exhibition {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(245, 245, 245);
+
+  .exhibition-header {
+    text-align: center;
+    height: 128px;
+    outline: rgb(0, 0, 0) solid 1px;
+    padding-top: 30px;
+  }
+
+
+  .exhibition-main {
+    max-width: 700px;
+    width: 100%;
+    margin: 0px auto;
+    height: 2210px;
+    outline: rgb(0, 0, 0) solid 1px;
+
+    &__inner {
+      width: 700px;
+      height: 2146px;
+      background-color: white;
+
+      &__section1 {
+        padding: 40px;
+
+        &__picture {
+          display: flex;
+          align-items: center;
+        }
+        label {
+          font-size: 14px;
+          font-weight: 600px;
+          line-height: 1.4em;
+        }
+        span {
+          margin-left: 8px;
+          font-size: 12px;
+          padding: 0 4px;
+          background-color: #ff0211;
+          color: #fff;
+        }
+        p.exhibition-main__inner__picture__content {
+          margin-top: 16px;
+          font-size: 14px;
+          line-height: 1.4em;
+        }
+        &__image-box {
+          background-color: rgb(245, 245, 245);
+          margin-top: 8px;
+          padding: 0 4px;
+          align-items: center;
+          display: flex;
+          height: 100%;
+          cursor: pointer;
+          border-width: 1px;
+          border-color: rgb(204, 204, 204);
+          border-image: initial;
+          border-style: dashed;
+          width: 620px;
+          height: 150px;
+        }
+        input#picture {
+          display: none;
+        }
+      }
+
+
+      &__section2 {
+        padding: 40px;
+        width: 700px;
+        height: 416px;
+
+        &__top {
+          width: 620px;
+          height: 83px;
+
+          &__title {
+            display: flex;
+            align-items: center;
+          }
+          label {
+            font-size: 14px;
+            font-weight: 600px;
+            line-height: 1.4em;
+          }
+          span {
+            margin-left: 8px;
+            font-size: 12px;
+            padding: 0 4px;
+            background-color: #ff0211;
+            color: #fff;
+          }
+          &__text {
+            width: 620px;
+            height: 48px;
+            &__input {
+              width: 586px;
+              height: 46px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              height: 48px;
+              padding: 0 16px;
+              width: inherit;
+            }
+          }
+        }
+        &__content {
+          width: 620px;
+          height: 221px;
+          margin-top: 32px;
+          &__title {
+            width: 620px;
+            height: 19px;
+            font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          }
+          &__text {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            margin: 0;
+            outline: none;
+            padding: 13px 16px;
+            margin-top: 16px;
+            resize: vertical;
+            vertical-align: middle;
+            width: 586px;
+            height: 126px;
+          }
+          &__word-count {
+            margin-top: 16px;
+            text-align: right;
+            color: #888;
+            font-size: 12px;
+          }
+        }
+      }
+
+      &__details {
+        width: 700px;
+        height: 444px;
+        padding: 40px;
+        
+        &__title {
+          color: rgb(136, 136, 136);
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.4em;
+          margin-bottom: 24px;
+          width: 620px;
+          height: 19px;
+        }
+        &__category {
+          width: 620px;
+          height: 83px;
+          margin-top: 32px;
+
+          &__title {
+            font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+            width: 620px;
+            height: 19px;
+          }
+          &__select {
+            width: 620px;
+            height: 48px;
+            margin-top: 16px;
+
+            &__box {
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              height: 48px;
+              padding: 0 56px 0 16px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .exhibition-footer {
+    padding: 40px 0px 41px;
+    margin-top: auto;
+    height: 130px;
+  }
+}
+
+
+
