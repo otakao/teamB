@@ -9,6 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user =User.new(user_params)
     if @user.save
+      bypass_sign_in(@user)
       redirect_to root_path, notice: "ユーザー「#{@user.nickname}」を登録しました。"
     else
       render 'new'
@@ -18,7 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
  
   private 
   def user_params
-    params.require(:user).permit(:nickname,:email,:password,:checkbox,:first_name,:last_name,:first_name_furigana,:last_name_furigana,:birthday)
+    params.require(:user).permit(:nickname,:email,:password, :first_name,:last_name,:first_name_furigana,:last_name_furigana,:birthday)
   end
 
 end

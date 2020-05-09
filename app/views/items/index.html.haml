@@ -11,6 +11,7 @@
         = link_to "カテゴリー","root_path", class:"furima-header__content__main__btn__left__category"
         = link_to "ブランド", "root_path", class:"furima-header__content__main__btn__left__brand"
       .furima-header__content__main__btn__right
+        -# = "#{current_user.nickname}"
         - if user_signed_in?
           = link_to "マイページ", "/users/#{current_user.id}"
         - else
