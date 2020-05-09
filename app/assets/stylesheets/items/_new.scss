@@ -99,23 +99,23 @@
                   justify-content: center;
                   margin-top: 10px;
                   display: flex;
-
+                  
 
                   &__list1{
                     width: 140px;
                     height: 87px;
-
+                    object-fit: cover;
                   }
                   &__list2{
                     width: 140px;
                     height: 87px;
-
+                    object-fit: cover;
                   }
 
                   &__list3{
                     width: 140px;
                     height: 87px;
-
+                    object-fit: cover;
                   }
                }
             }
@@ -313,10 +313,10 @@
           
     .item-main__show-item__main-content__content__item__option{
             height: 48px;
-            display: flex;
-            justify-content: space-between; 
+            // display: flex;
+            // justify-content: space-between; 
             margin-top: 20px;
-
+            
             ul{
               height: 38px;
               margin-top: 10px;
@@ -325,8 +325,7 @@
               li.likeBtn{
                 a{
                   display: inline-block;
-                  margin-top: 20px;
-                  // margin-right: auto;
+                  margin-top: 35px;
                   padding: 6px 10px 6px 50px;
                   border-radius: 40px;
                   color: #3CCACE;
@@ -345,7 +344,7 @@
                   color:  #3CCACE;
                   font-size: 18px;
                   position: absolute;
-                  margin: 29px 0 0 20px;                
+                  margin: 44px 0 0 20px;                
                   ::before{
                     content: "\f005";
                   }
@@ -369,19 +368,20 @@
 
 
 
-              }
-
             }
+
           }
+    }
         
 
-        &__comment{
-          height: 257px;
+        &__comment{         
+          height: 305px;                              
           padding: 24px;
           margin: 10px 0;
           text-align: center;
 
           .form{
+            // width: 100%;
             height: 257px;
             
             .textarea{
@@ -390,8 +390,8 @@
             }
 
             p.notice{
-              width: 636px;
-              height: 42px;
+              // width: 636px;
+              height: 104px;
               padding: 8px;
               font-size: 14px;
               background-color: #f8f8f8;

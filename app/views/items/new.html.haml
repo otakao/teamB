@@ -48,9 +48,11 @@
                 = image_tag asset_path("a007"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__image'
                 %ul.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures
                   %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1
-                    -# = image_tag asset_path("a007s"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1__image'
+                    = image_tag asset_path("a007s"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1__image'
                   %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2
+                    = image_tag asset_path("a003"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2__image'
                   %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3
+                    = image_tag asset_path("a001"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3__image'
           .item-main__show-item__main-content__content__item__price
             %span ¥30000
             .item-main__show-item__main-content__content__item__price__other
@@ -90,16 +92,16 @@
                   %td 4-7日で発送
 
               
-          .item-main__show-item__main-content__content__item__option
-            %ul
-              %li.likeBtn
-                %i.fa.fa-star.icon
-                = link_to 'お気に入り 0', '#'
-            %ul.bad-goods
-              %li.button
-                -# = link_to "不適正な商品の通報" ,"root_path", class:"btn" do
-                  -# %i.fa.fa-flag.icon
-                    "不適正な商品の通報"
+        .item-main__show-item__main-content__content__item__option
+          %ul
+            %li.likeBtn
+              %i.fa.fa-star.icon
+              = link_to 'お気に入り 0', '#'
+          %ul.bad-goods
+            %li.button
+              -# = link_to "不適正な商品の通報" ,"root_path", class:"btn" do
+                -# %i.fa.fa-flag.icon
+                  "不適正な商品の通報"
           .item-main__show-item__main-content__content__comment
             %ul.comments
             %form
@@ -121,46 +123,46 @@
         = link_to "ベビー・キッズをもっと見る" ,root_path
 
 
-.main-banner  
-  .main-banner__center
-    %h2.title1 "だれでもかんたん、人生を変えるフリマアプリ"
-    %h1.title2 "今すぐ無料ダウンロード！"
-    .main-banner__center__icon
-      %a(href="#" App Stre)
-      %a(href="#" Google Play)
+-# .main-banner  
+-#   .main-banner__center
+-#     %h2.title1 "だれでもかんたん、人生を変えるフリマアプリ"
+-#     %h1.title2 "今すぐ無料ダウンロード！"
+-#     .main-banner__center__icon
+-#       %a(href="#" App Stre)
+-#       %a(href="#" Google Play)
 
-.footer
-%ul.footer__contents
-  %li.footer__contents__lift
-    %h2.footer__contents__lift__top FURIMAについて
-    %ul
-      %li
-        %a(href="#") 会社概要（運営会社）
-      %li
-        %a(href="#") プライバシーポリシー
-      %li
-        %a(href="#") FURIMA利用規約
-      %li
-        %a(href="#") ポイントに関する特約
-  %li.footer__contents__center
-    %h2.footer__contents__center__top FURIMAを見る
-    %ul
-      %li
-        %a(href="#") カテゴリー一覧
-      %li
-        %a(href="#") ブランド一覧
-  %li.footer__contents__right
-    %h2.footer__contents__right__top ヘルプ＆ガイド
-    %ul
-      %li
-        %a(href="#") FURIMAガイド
-      %li
-        %a(href="#") FURIMAロゴ利用ガイドライン
-      %li
-        %a(href="#") お知らせ
+-# .footer
+-# %ul.footer__contents
+-#   %li.footer__contents__lift
+-#     %h2.footer__contents__lift__top FURIMAについて
+-#     %ul
+-#       %li
+-#         %a(href="#") 会社概要（運営会社）
+-#       %li
+-#         %a(href="#") プライバシーポリシー
+-#       %li
+-#         %a(href="#") FURIMA利用規約
+-#       %li
+-#         %a(href="#") ポイントに関する特約
+-#   %li.footer__contents__center
+-#     %h2.footer__contents__center__top FURIMAを見る
+-#     %ul
+-#       %li
+-#         %a(href="#") カテゴリー一覧
+-#       %li
+-#         %a(href="#") ブランド一覧
+-#   %li.footer__contents__right
+-#     %h2.footer__contents__right__top ヘルプ＆ガイド
+-#     %ul
+-#       %li
+-#         %a(href="#") FURIMAガイド
+-#       %li
+-#         %a(href="#") FURIMAロゴ利用ガイドライン
+-#       %li
+-#         %a(href="#") お知らせ
 
-.footer__logo
-  %a(href="/")
-    %img(src="" alt="/assets/logo-white-f61961e...svg")
-    %p &copy FURIMA
+-# .footer__logo
+-#   %a(href="/")
+-#     %img(src="" alt="/assets/logo-white-f61961e...svg")
+-#     %p &copy FURIMA
 
