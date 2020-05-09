@@ -304,6 +304,7 @@
         display: block;
         margin: 8px 0 0;
         background-color: #0099e8;
+        text-decoration: none;
         color: $mainWhiteColor;
         line-height: 40px;      
       }
@@ -325,9 +326,17 @@
 
     &__login-session-form{
       padding: 40px 64px;
+      background-color: $mainWhiteColor;
       &__login-form-inner{
         &__form-group{
           padding: 0 0 20px;
+          input#name{
+            height: 48px;
+            padding:10px 16px 8px;
+            border-radius: 4px;
+            border:1px solid #ccc;
+            width:100%;
+            }                  
           &__login-captcha{
             &__style{
               width: 304px;
@@ -345,20 +354,19 @@
             %iframe{
               display: none;
             }
-                  
         }
       }
-    
+      input.btn-red{
+        background-color: $mainRedColor;
+        color: $mainWhiteColor;
+        @include button();
+        margin: 0 0 40px    
+      }              
+
     }
 
 
-     button.login-submit.session-login.btn-red{
-      background-color: $mainRedColor;
-      color: $mainWhiteColor;
-      @include button();
-      margin: 0 0 40px
-     }
-      }
+  }
       a.forget-password{
         margin:40px 0 0;
         text-decoration: none;
@@ -366,15 +374,7 @@
 
       }      
       
-    }
-  input#_name{
-    height: 48px;
-    padding:10px 16px 8px;
-    border-radius: 4px;
-    border:1px solid #ccc;
-    width:100%;
-    }
-  
+}
 
 
 p.session-no-account-text{
