@@ -15,90 +15,100 @@
             %p.exhibition-main__inner__section1__picture__content
               最大10枚までアップロードできます
             .exhibition-main__inner__section1__image-box
-              =f.file_field :image, id:"picture" 
+              =f.file_field :image, id:"picture"
               ドラックアンドドロップまたはクリックしてファイルをダウンロード
 
            
-            .exhibition-main__inner__section2
-              .exhibition-main__inner__section2__top
-                .exhibition-main__inner__section2__top__title 
-                  %label 商品名
-                  %span 必須
-                .exhibition-main__inner__section2__top__text
-                  = f.text_field :name, class: "top-text", size: 40 
-                  40文字まで
-              .exhibition-main__inner__section2__content
-                .exhibition-main__inner__section2__content__title
-                  商品の説明 必須
-                .exhibition-main__inner__section2__content__text
-                  = f.text_area :name, class: "content-text", size: "20*50" 
-                  商品の説明 (必須 1000文字以内)(色、素材、重さ、定価、注意点など)例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです
-                .exhibition-main__inner__section2__content__word-count
-                  0/1000
+          .exhibition-main__inner__section2
+            .exhibition-main__inner__section2__top
+              .exhibition-main__inner__section2__top__title 
+                %label 商品名
+                %span 必須
+              .exhibition-main__inner__section2__top__text
+                = f.text_field :name, class: "top-text", size: 40,placeholder: "40文字まで"
+            .exhibition-main__inner__section2__content
+              .exhibition-main__inner__section2__content__title
+                %label 商品の説明
+                %span 必須
+              .exhibition-main__inner__section2__content__text
+                = f.text_area :name, class: "content-text", size: "50*20",placeholder: "商品の説明 (必須 1000文字以内)\n (色、素材、重さ、定価、注意点など)\n\n例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです"
+              .exhibition-main__inner__section2__content__word-count
+                0/1000
 
-          .exhibition-main__inner__details
-            .exhibition-main__inner__details__title
+
+          .exhibition-main__inner__section3
+            .exhibition-main__inner__section3__title
               商品の詳細
-            .exhibition-main__inner__details__category
-              .exhibition-main__inner__details__category__title
-                カテゴリー 必須
-              .exhibition-main__inner__details__category__select
-                .exhibition-main__inner__details__category__select__box
-                  選択してください
-            .exhibition-main__inner__details__brand
-              .exhibition-main__inner__details__brand__title
+            .exhibition-main__inner__section3__category
+              .exhibition-main__inner__section3__category__title
+                %label カテゴリー
+                %span 必須
+              .exhibition-main__inner__section3__category__select
+                = f.text_field :name, class: "top-text", size: 40,placeholder: "選択してください"
+            .exhibition-main__inner__section3__brand
+              .exhibition-main__inner__section3__brand__title
                 %label ブランド
                 %span 任意
-              .exhibition-main__inner__details__brand__text
-                例) シャネル
-            .exhibition-main__inner__details__status
-              .exhibition-main__inner__details__status__title
+              .exhibition-main__inner__section3__brand__text
+                = f.text_field :name, class: "top-text", size: 40,placeholder: "例) シャネル"
+            .exhibition-main__inner__section3__status
+              .exhibition-main__inner__section3__status__title
                 %label 商品の状態
                 %span 必須
-              .exhibition-main__inner__details__status__text
-                選択してください
+              .exhibition-main__inner__section3__status__select
+                = f.text_field :name, class: "top-text", size: 40,placeholder: "選択してください"
 
 
-          .exhibition-main__inner__delivery
-            .exhibition-main__inner__delivery_top
-              .exhibition-main__inner__delivery_top__text
+          .exhibition-main__inner__section4
+            .exhibition-main__inner__section4__top
+              .exhibition-main__inner__section4__top__text
                 配送について 
-            .exhibition-main__inner__delivery__cost
-              .exhibition-main__inner__delivery__cost__title
+            .exhibition-main__inner__section4__cost
+              .exhibition-main__inner__section4__cost__title
                 %label 配送料の負担
                 %span 必須
-              .exhibition-main__inner__delivery__cost__select
-                選択してください
-              .exhibition-main__inner__delivery__cost__select2
-                選択してください(赤文字)
-            .exhibition-main__inner__delivery__area
-              .exhibition-main__inner__delivery__area__title
+              .exhibition-main__inner__section4__cost__select
+                = f.text_field :name, class: "top-text", size: 40,placeholder: "選択してください"
+            .exhibition-main__inner__section4__area
+              .exhibition-main__inner__section4__area__title
                 %label 発送元の地域
                 %span 必須
-              .exhibition-main__inner__delivery__area__select
-                選択してください
-            .exhibition-main__inner__delivery__days
-              .exhibition-main__inner__delivery__days__title
+              .exhibition-main__inner__section4__area__select
+                = f.text_field :name, class: "top-text", size: 40,placeholder: "選択してください"
+            .exhibition-main__inner__section4__days
+              .exhibition-main__inner__section4__days__title
                 %label 発送までの日数
                 %span 必須
-              .exhibition-main__inner__delivery__days__select
-                選択してください
+              .exhibition-main__inner__section4__days__select
+                = f.text_field :name, class: "top-text", size: 40,placeholder: "選択してください"
 
-          .exhibition-main__inner__price
-            .exhibition-main__inner__price__top
+
+          .exhibition-main__inner__section5
+            .exhibition-main__inner__section5__top
               価格 (￥300~9,999,999)
-            .exhibition-main__inner__price__box
-              .exhibition-main__inner__price__box__selling
-                .exhibition-main__inner__price__box__selling__text
+            .exhibition-main__inner__section5__box
+              .exhibition-main__inner__section5__box__selling
+                .exhibition-main__inner__section5__box__selling__text
                   %label 販売価格
                   %span 必須
-                .exhibition-main__inner__price__box__input-field
-              .exhibition-main__inner__price__box__sales-commission
-                .exhibition-main__inner__price__box__sales-commission__text
+                  .exhibition-main__inner__section5__box__selling__text__input-field
+                    = f.text_field :name, class: "top-text", size: 10
+              .exhibition-main__inner__section5__box__sales-commission
+                .exhibition-main__inner__section5__box__sales-commission__text
                   販売手数料 (10%)
-              .exhibition-main__inner__price__box__sales-profit
-                .exhibition-main__inner__price__box__sales-profit__text
+              .exhibition-main__inner__section5__box__sales-profit
+                .exhibition-main__inner__section5__box__sales-profit__text
                   販売利益
+
+
+          .exhibition-main__inner__section6
+            .exhibition-main__inner__section6__top
+              = f.submit "出品する", class: "top-6"
+            .exhibition-main__inner__section6__middle
+              = f.submit "下書きに保存", class: "middle-6"
+            .exhibition-main__inner__section6__under
+              =link_to "もどる", "#" 
+                          
 
 
 
