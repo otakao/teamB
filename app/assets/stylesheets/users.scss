@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .body{
-  font-famiry:'Source Sans Pro';
+  font-family:'Source Sans Pro';
 }
 .container{
   background-color: rgb(245,245,245);
@@ -83,25 +83,22 @@
         background-color: $mainWhiteColor;
       } 
 
-      &__birth-select-wrap{
-        display: flex;
-        width: 76px;
-        padding-top:20px;
+      &__birth-select-wrap{ 
         background-color: $mainWhiteColor;
-        
         &__birth-year{
+          display: flex;
           background-color: $mainWhiteColor;
           padding-right:5px;
+          margin: 8px 0 0;
+          line-height: 50px;
+          select#_birth_date_1i{
+            margin: 0 5px 0 0;
+          }
+          select#_birth_date_2i,select#_birth_date_3i{
+            margin: 0 5px;
+          }
+
         }
-        &__birth-month{
-          background-color: $mainWhiteColor;
-          padding:0 5px 0 10px;
-        }
-        &__birth-day{
-          background-color: $mainWhiteColor;
-          padding:0 5px 0 10px;
-        }
-        
       }
       &__next-page-navi{
         background-color: $mainWhiteColor;
@@ -186,19 +183,16 @@
         
       }
     }
-    .btn-red{
-      text-align: center;
-      padding: 24px 0 0;
-      background-color: $mainWhiteColor;
-
-      input{
-        width:100%;
-        background-color:$mainRedColor;
-        color:$mainWhiteColor;
-        cursor: pointer;
+      input.btn-red{
+      width: 100%;
+      margin: 24px 0 0;
+      background-color: $mainRedColor;
+      border: 1px solid $mainRedColor;
+      color:$mainWhiteColor;
+      cursor: pointer;
       }
 
-    }    
+        
 
     #password-error{
       background-color: $mainWhiteColor;
@@ -243,7 +237,8 @@
       font-size: 22px;
       padding: 32px;
       background-color: $mainWhiteColor;
-      text-align: center;
+      text-align: center;      
+      border-bottom: 1px solid #f5f5f5;
     }
     .form-box{
       background-color: $mainWhiteColor;
@@ -309,6 +304,7 @@
         display: block;
         margin: 8px 0 0;
         background-color: #0099e8;
+        text-decoration: none;
         color: $mainWhiteColor;
         line-height: 40px;      
       }
@@ -330,9 +326,17 @@
 
     &__login-session-form{
       padding: 40px 64px;
+      background-color: $mainWhiteColor;
       &__login-form-inner{
         &__form-group{
           padding: 0 0 20px;
+          input#name{
+            height: 48px;
+            padding:10px 16px 8px;
+            border-radius: 4px;
+            border:1px solid #ccc;
+            width:100%;
+            }                  
           &__login-captcha{
             &__style{
               width: 304px;
@@ -350,20 +354,19 @@
             %iframe{
               display: none;
             }
-                  
         }
       }
-    
+      input.btn-red{
+        background-color: $mainRedColor;
+        color: $mainWhiteColor;
+        @include button();
+        margin: 0 0 40px    
+      }              
+
     }
 
 
-     button.login-submit.session-login.btn-red{
-      background-color: $mainRedColor;
-      color: $mainWhiteColor;
-      @include button();
-      margin: 0 0 40px
-     }
-      }
+  }
       a.forget-password{
         margin:40px 0 0;
         text-decoration: none;
@@ -371,15 +374,7 @@
 
       }      
       
-    }
-  input#_name{
-    height: 48px;
-    padding:10px 16px 8px;
-    border-radius: 4px;
-    border:1px solid #ccc;
-    width:100%;
-    }
-  
+}
 
 
 p.session-no-account-text{
@@ -395,7 +390,7 @@ p.session-no-account-text{
     text-align: center;
   }
 }
- ul{
+ ul.menu{
     display: flex;
     justify-content: space-between;
     font-size:12px;
