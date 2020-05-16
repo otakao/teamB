@@ -7,7 +7,6 @@
   .exhibition-header {
     text-align: center;
     height: 128px;
-    outline: rgb(0, 0, 0) solid 1px;
     padding-top: 30px;
   }
 
@@ -17,12 +16,23 @@
     width: 100%;
     margin: 0px auto;
     height: 2210px;
-    outline: rgb(0, 0, 0) solid 1px;
 
     &__inner {
       width: 700px;
       height: 2146px;
       background-color: white;
+
+      hr {
+        width: 700px;
+        border-top-width: 1px;
+        border-top-color: #efefef;
+        border-left: 0 solid #efefef;
+        border-bottom: 0 solid #efefef;
+        border-right: 0 solid #efefef;
+        border-top-style: solid;
+        margin: 0;
+        }
+      
 
       &__section1 {
         padding: 40px;
@@ -68,6 +78,27 @@
           border-style: dashed;
           width: 620px;
           height: 150px;
+          font-size: 12px;
+          position: relative;
+
+          &__icon {
+            fill: rgb(34, 34, 34);
+            height: 24px;
+            margin-bottom: 8px;
+            width: 100%;
+            text-align: center;
+
+            .camera-icon {
+              display: block;
+              font-size: 24px;
+              margin-bottom: 8px;
+            }
+          }
+          &__text {
+            text-align: center;
+            width: 100%;
+            position: absolute;
+          }
         }
         input#picture {
           display: none;
@@ -190,6 +221,14 @@
           }
           &__select {
             margin-top: 16px;
+            
+            select#_category {
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              width: 100%;
+            }
           }
         }
         &__brand {
@@ -243,6 +282,14 @@
           }
           &__select {
             margin-top: 16px;
+
+            select#_category {
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              width: 100%;
+            }
           }
         }
       }
@@ -288,6 +335,14 @@
           }
           &__select {
             margin-top: 16px;
+
+            select#_category {
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              width: 100%;
+            }
           }
         }
         &__area {
@@ -315,6 +370,14 @@
           }
           &__select {
             margin-top: 16px;
+
+            select#_category {
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              width: 100%;
+            }
           }
         }
         &__days {
@@ -342,6 +405,14 @@
           }
           &__select {
             margin-top: 16px;
+
+            select#_category {
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              width: 100%;
+            }
           }
         }
       }
@@ -403,24 +474,45 @@
               height: 48px;
               position: absolute;
               right: 0px;
+
             }
           }
+        }
           &__sales-commission {
             padding: 12px 0;
             height: 70px;
             width: 620px;
+            display: flex;
+            justify-content: space-between;
 
             &__text {
               font-size: 13px;
               width: 126.031px;
               height: 14px;
               margin-right: 479.969px;
-            }
+            } 
+            span {
+              font-size: 14px;
+              width: 14px;
+              height: 14px;
+              color: black;
+            } 
+          }
+          hr {
+            border-top-width: 1px;
+            border-top-color: #efefef;
+            border-left: 0 solid #efefef;
+            border-bottom: 0 solid #efefef;
+            border-right: 0 solid #efefef;
+            border-top-style: solid;
+            width: 620px;
           }
           &__sales-profit {
             padding-top: 12px;
             height: 58px;
             width: 620px;
+            display: flex;
+            justify-content: space-between;
 
             &__text {
               margin-right: 550px;
@@ -428,21 +520,15 @@
               height: 14px;
               font-size: 13px;
             }
-          }
-          &__sales-profit {
-            width: 620px;
-            height: 58px;
-            padding-top: 12px;
-
-            &__text {
-              width: 56px;
+            span {
+              font-size: 14px;
+              width: 14px;
               height: 14px;
-              margin-right: auto;
+              color: black;
             }
           }
         }
       }
-    }
     &__section6 {
       margin: 0 170px 32px 170px;
       width: 360px;
@@ -492,12 +578,13 @@
         }
       }
     }
-  }
-}
-  .exhibition-footer {
-    padding: 40px 0px 41px;
-    margin-top: auto;
-    height: 130px;
+    .exhibition-main__inner__section7 {
+      width: 620px;
+      height: 32px;
+      margin: 0 40px 64px;
+      font-size: 12px;
+     }
+   }
   }
 }
 
