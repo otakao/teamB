@@ -1,86 +1,107 @@
-.furima-header
-  .furima-header__content
-    .furima-header__content__main
-      %a{href: "/"}
-        = image_tag "logo.png", class:"furima-header__content__main__logo"
-      .furima-header__content__main__search
-        = form_with url:root_path do |form|
-          = form.text_field :name, placeholder: "キーワードから探す", class: "furima-header__content__main__search__input"
-          = image_submit_tag ("icon-search1.png"), class: "furima-header__content__main__search__icon", value: ""
-    .furima-header__content__main__btn
-      .furima-header__content__main__btn__left
-        %a.furima-header__content__main__btn__left__category{href: "#"} カテゴリー
-        %a.furima-header__content__main__btn__left__brand{href: "#"} ブランド
-      .furima-header__content__main__btn__right
-        %a.furima-header__content__main__btn__right__login{href: "#"} ログイン
-        %a.furima-header__content__main__btn__right__signup{href: "#"} 新規会員登録
-
-.narrow-down
-  %ul.narrow-down__category
-    %li.narrow-down__category__list
-      %a{:href => "/"} FURIMA
-    %li.narrow-down__category__list
-      %i.fa.fa-angle-right \f105
-    %li.narrow-down__category__list
-      %a(href="#") ベビー・キッズ
-    %li.narrow-down__category__list
-      %i.fa.fa-angle-right \f105
-    %li.narrow-down__category__list
-      %a(href="#") ベビー服(男女兼用)~95cm
-    %li.narrow-down__category__list
-      %i.fa.fa-angle-right \f105
-    %li.narrow-down__category__list
-      %a(href="#") アウター
-    %li.narrow-down__category__list
-      %i.fa.fa-angle-right \f105
-    %li.narrow-down__category__list
-      %a(href="#") product3
+.narrow-downitem
+  %ul.narrow-downitem__category
+    %li.narrow-downitem__category__list
+      = link_to "FURIMA" ,root_path 
+    %li.narrow-downitem__category__list
+      %i.fa.fa-angle-right.icon
+    %li.narrow-downitem__category__list
+      = link_to "ベビー・キッズ" ,root_path 
+    %li.narrow-downitem__category__list
+      %i.fa.fa-angle-right 
+    %li.narrow-downitem__category__list
+      = link_to "ベビー服(男女兼用)~95cm" ,root_path
+    %li.narrow-downitem__category__list
+      %i.fa.fa-angle-right
+    %li.narrow-downitem__category__list
+      = link_to "アウター" ,root_path  
+    %li.narrow-downitem__category__list
+      %i.fa.fa-angle-right
+    %li.narrow-downitem__category__list
+      = link_to "product3" ,root_path  
 
 .item-main
   .item-main__show-item
     .item-main__show-item__main-content
       .item-main__show-item__main-content__content
         .item-main__show-item__main-content__content__item
-          %h.item-main__show-item__main-content__content__item__name
-          .item-main__show-item__main-content__content__item__picture
+          %h.item-main__show-item__main-content__content__item__name product3
+          .item-main__show-item__main-content__content__item__image
+            %ul.item-main__show-item__main-content__content__item__image__details
+              %li.item-main__show-item__main-content__content__item__image__details__pictures
+                = image_tag asset_path("a007"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__image'
+                %ul.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures
+                  %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1
+                    = image_tag asset_path("a007s"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1__image',size:"140x87"
+                  %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2
+                    = image_tag asset_path("a003"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2__image',size:"140x87"
+                  %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3
+                    = image_tag asset_path("a001"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3__image',size:"140x87"
           .item-main__show-item__main-content__content__item__price
-          .item-main__show-item__main-content__content__item__text
-          .item-main__show-item__main-content__content__item__table
-          .item-main__show-item__main-content__content__item__option
-        .item-main__show-item__main-content__content__comment
-    .item-main__show-item__main-content__link
-    .item-main__show-item__main-content__more-item
+            %span ¥30000
+            .item-main__show-item__main-content__content__item__price__other
+              %span (税込)
+              %span 送料込み
+          .item-main__show-item__main-content__content__item__text 親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+          .item-main__show-item__main-content__content__item__main-table
+            %table
+              %tbody
+                %tr
+                  %th 出品者
+                  %td hoge
+                %tr
+                  %th カテゴリー
+                  %td 
+                    = link_to "ベビー・キッズ","root_path", class:"category1"             
+                    = link_to "ベビー服(男女兼用)~95cm","root_path", class:"category2"             
+                    = link_to "アウター","root_path", class:"category3"
+            
+                %tr
+                  %th ブランド
+                  %td
+                %tr
+                  %th 商品サイズ
+                  %td
+                %tr
+                  %th 商品の状態
+                  %td 未使用に近い
+                %tr
+                  %th 配送料の負担
+                  %td 配送料込み(出品者負担)    
+                %tr
+                  %th 発送元の地域
+                  %td 岩手県
+                %tr
+                  %th 発送日の目安
+                  %td 4-7日で発送
 
-.main-banner 
-  .main-banner__banner
-    %h2.main-banner__banner__title "だれでもかんたん、人生を変えるフリマアプリ"
-    %h1.main-banner__banner__text "今すぐ無料ダウンロード！"
-    .main-banner__banner__icon
-      %a(href="#" App Stre)
-      %a(href="#" Google Play)
+              
+        .item-main__show-item__main-content__content__item__option
+          %ul
+            %li.likeBtn
+              %i.fa.fa-star.icon
+              = link_to 'お気に入り 0', '#'
+          
+          .item-main__show-item__main-content__content__comment
+            %ul.comments
+            %form
+              %input.textarea{type: 'text'}
+              %p.notice
+                相手のことを考え丁寧なコメントを心がけましょう。
+                %br/
+                不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              .comment-button1                
+                %input.comment-button{type: 'submit',  value: 'コメントする'}
+                %i.fa.fa-comment.icon-comment
+              
+      %ul.item-main__show-item__main-content__link
+        %li.left
+          %i.fa.fa-angle-left.icon
+          = link_to "前の商品" ,root_path 
+        %li.right
+          = link_to "後ろの商品" ,root_path 
+          %i.fa.fa-angle-right.icon
 
-.footer
-  %ul.footer__contents
-    %li.footer__contents__lift
-      %h2.footer__contents__lift__top FURIMAについて
-      %ul
-        %li
-          %a(href="#") 会社概要（運営会社）
-        %li
-          %a(href="#") プライバシーポリシー
-        %li
-          %a(href="#") FURIMA利用規約
-        %li
-          %a(href="#") ポイントに関する特約
-    %li.footer__contents__center
-      %h2.footer__contents__center__top FURIMAを見る
-
-    %li.footer__contents__right
+      .item-main__show-item__main-content__more-item
+        = link_to "ベビー・キッズをもっと見る" ,root_path
 
 
-    
-    
-    
-    
-
-      
