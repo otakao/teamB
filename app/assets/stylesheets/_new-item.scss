@@ -135,6 +135,15 @@
             width: 620px;
             height: 48px;
             margin-top: 16px;
+
+            input#_name.top-text {
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              height: 48px;
+              padding: 0 16px;
+              width: 100%;
+              background-color: #fff;
+            }
           }
         }
         &__content {
@@ -228,6 +237,7 @@
               border-radius: 4px;
               border: 1px solid #ccc;
               width: 100%;
+              background-color: #fff;
             }
           }
         }
@@ -255,6 +265,15 @@
           }
           &__text {
             margin-top: 16px;
+
+            input#_name.top-text {
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              height: 48px;
+              padding: 0 16px;
+              width: 100%;
+              background-color: #fff;
+            }
           }
         }
         &__status {
@@ -289,6 +308,7 @@
               border-radius: 4px;
               border: 1px solid #ccc;
               width: 100%;
+              background-color: #fff;
             }
           }
         }
@@ -342,6 +362,7 @@
               border-radius: 4px;
               border: 1px solid #ccc;
               width: 100%;
+              background-color: #fff;
             }
           }
         }
@@ -377,6 +398,7 @@
               border-radius: 4px;
               border: 1px solid #ccc;
               width: 100%;
+              background-color: #fff;
             }
           }
         }
@@ -412,6 +434,7 @@
               border-radius: 4px;
               border: 1px solid #ccc;
               width: 100%;
+              background-color: #fff;
             }
           }
         }
@@ -453,7 +476,17 @@
                 float: right;
                 width: 285px;
                 height: 48px;
-            }
+
+                input#_name.top-text {
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  box-sizing: border-box;        
+                  height: 48px;
+                  outline: none;
+                  padding: 0 16px;
+                  width: 100%;
+                }
+               }
             label {
               font-size: 14px;
               font-weight: 600;
