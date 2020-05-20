@@ -342,9 +342,10 @@
         }
       }
       &__lists{
-        width: 780px;
+        width: 1200px;
         margin: 0 auto;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
         padding-bottom: 26px;
         &__list{
@@ -356,6 +357,7 @@
             &__img{
               width: 220px;
               height: 210px;
+              text-align: center;
             }
             &__box{
               background-color: white;
