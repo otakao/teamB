@@ -45,63 +45,63 @@
           .item-main__show-item__main-content__content__item__main-table
             %table
               %tbody
-                %tr
+                %tr.test1
                   %th 出品者
                   %td hoge
-                %tr
+                %tr.test2
                   %th カテゴリー
                   %td 
                     = link_to "ベビー・キッズ","root_path", class:"category1"             
                     = link_to "ベビー服(男女兼用)~95cm","root_path", class:"category2"             
                     = link_to "アウター","root_path", class:"category3"
             
-                %tr
+                %tr.test3
                   %th ブランド
                   %td
-                %tr
+                %tr.test4
                   %th 商品サイズ
                   %td
-                %tr
+                %tr.test5
                   %th 商品の状態
                   %td 未使用に近い
-                %tr
+                %tr.test6
                   %th 配送料の負担
                   %td 配送料込み(出品者負担)    
-                %tr
+                %tr.test7
                   %th 発送元の地域
                   %td 岩手県
-                %tr
+                %tr.test8
                   %th 発送日の目安
                   %td 4-7日で発送
 
               
-        .item-main__show-item__main-content__content__item__option
-          %ul
-            %li.likeBtn
-              %i.fa.fa-star.icon
-              = link_to 'お気に入り 0', '#'
-          
-          .item-main__show-item__main-content__content__comment
-            %ul.comments
-            %form
-              %input.textarea{type: 'text'}
-              %p.notice
-                相手のことを考え丁寧なコメントを心がけましょう。
-                %br/
-                不快な言葉遣いなどは利用制限や退会処分となることがあります。
-              .comment-button1                
-                %input.comment-button{type: 'submit',  value: 'コメントする'}
-                %i.fa.fa-comment.icon-comment
+          .item-main__show-item__main-content__content__item__option
+            %ul
+              %li.likeBtn
+                %i.fa.fa-star.icon
+                = link_to 'お気に入り 0', '#'
+            
+        .item-main__show-item__main-content__content__comment
+          %ul.comments
+          %form
+            %input.textarea{type: 'text'}
+            %p.notice
+              相手のことを考え丁寧なコメントを心がけましょう。
+              %br/
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            .comment-button1                
+              %input.comment-button{type: 'submit',  value: 'コメントする'}
+              %i.fa.fa-comment.icon-comment
               
-      %ul.item-main__show-item__main-content__link
-        %li.left
-          %i.fa.fa-angle-left.icon
-          = link_to "前の商品" ,root_path 
-        %li.right
-          = link_to "後ろの商品" ,root_path 
-          %i.fa.fa-angle-right.icon
+        %ul.item-main__show-item__main-content__content__link
+          %li.left
+            %i.fa.fa-angle-left.icon
+            = link_to "前の商品" ,root_path 
+          %li.right
+            = link_to "後ろの商品" ,root_path 
+            %i.fa.fa-angle-right.icon
 
-      .item-main__show-item__main-content__more-item
-        = link_to "ベビー・キッズをもっと見る" ,root_path
+        .item-main__show-item__main-content__more-item
+          = link_to "ベビー・キッズをもっと見る" ,root_path
 
 
