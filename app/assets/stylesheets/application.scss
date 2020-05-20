@@ -1,7 +1,12 @@
 @import "reset";
 @import "reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "variable";
 @import "mixin";
 @import "items";
 @import "users";
+@import "new-item";
 @import "item-buy-confirmation";
+// @import "items/new";
+@import "items/show";

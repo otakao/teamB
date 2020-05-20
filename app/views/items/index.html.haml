@@ -108,7 +108,7 @@
   .furima-main__pickup
     %h2.furima-main__pickup__category ピックアップアイテム
     .furima-main__pickup__content
-      = link_to "root_path",class:"furima-main__pickup__content__link" do
+      = link_to show2_items_path ,class:"furima-main__pickup__content__link" do
         %h3.furima-main__pickup__content__link__title 新規投稿商品
     .furima-main__pickup__content__lists
       - @items.zip(@images).each do |item,image|  
