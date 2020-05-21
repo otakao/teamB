@@ -1,23 +1,4 @@
-.furima-header
-  .furima-header__content
-    .furima-header__content__main
-      = link_to image_tag("logo.png", class: "furima-header__content__main__logo"), "root_path"
-      .furima-header__content__main__search
-        = form_with url:root_path do |form|
-          = form.text_field :name, placeholder: "キーワードから探す", class: "furima-header__content__main__search__input"
-          = image_submit_tag ("icon-search1.png"), class: "furima-header__content__main__search__icon", value: ""
-    .furima-header__content__main__btn
-      .furima-header__content__main__btn__left
-        = link_to "カテゴリー","root_path", class:"furima-header__content__main__btn__left__category"
-        = link_to "ブランド", "root_path", class:"furima-header__content__main__btn__left__brand"
-      .furima-header__content__main__btn__right
-        -# = "#{current_user.nickname}"
-        - if user_signed_in?
-          = link_to "マイページ", "/users/#{current_user.id}"
-        - else
-          = link_to "ログイン", new_user_session_path, class:"furima-header__content__main__btn__right__login"
-          = link_to "新規会員登録", new_user_registration_path, class:"furima-header__content__main__btn__right__signup"
-
+=render partial:’header’
 .furima-main
   .furima-main__top-image
     .furima-main__top-image__content
@@ -122,46 +103,5 @@
                 %li 30000円
                 %li 0
               %p (税込)
-  .furima-main__lower-image
-    .furima-main__lower-image__content
-      %h2.furima-main__lower-image__content__title だれでもかんたん、人生を変えるフリマアプリ
-      %p.furima-main__lower-image__content__text 今すぐ無料ダウンロード！
-      .furima-main__lower-image__content__icon
-        = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg",  alt: "appstore", width: "180px"),"root_path", class:"furima-main__lower-image__content__icon__abtn"
-        = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", alt:"googleplay", width: "180px"),"root_path", class:"furima-main__lower-image__content__icon__abtn"
-
-.furima-footer
-  %ul.furima-footer__content
-    %li.furima-footer__content__list
-      %h2.furima-footer__content__list__top FURIMAについて
-      %ul
-        %li
-          = link_to "会社概要（運営会社）", "root_path" 
-        %li
-          = link_to "プライバシーポリシー", "root_path" 
-        %li
-          = link_to "FURIMA利用規約", "root_path"
-        %li
-          = link_to "ポイントに関する特約", "root_path"
-    %li.furima-footer__content__list
-      %h2.furima-footer__content__list__top FURIMAを見る
-      %ul
-        %li
-          = link_to "カテゴリー一覧", "root_path"
-        %li
-          = link_to "ブランド一覧", "root_path"
-    %li.furima-footer__content__list
-      %h2.furima-footer__content__list__top ヘルプ＆ガイド
-      %ul
-        %li
-          = link_to "FURIMAガイド", "root_path"
-        %li
-          = link_to "FURIMAロゴ利用ガイドライン", "root_path"
-        %li
-          = link_to "お知らせ", "root_path"
-  = link_to image_tag("logo-white.png", class:"furima-footer__logo"), "root_path"
-  %p.furima-footer__p © FURIMA
-= link_to new_item_path do
-  .sell-btn
-    %p.sell-btn__text 出品する
-    = image_tag("icon_camera.png", width: "60%")  
+=render partial:’lower-image
+=render partial:’footer’
