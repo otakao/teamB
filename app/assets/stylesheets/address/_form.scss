@@ -1,6 +1,7 @@
 .address-resistration{
   width: 100vw;
   height: 100vh;
+  @include border-top;
   &__header{
     text-align: center;
     line-height: 100px;
