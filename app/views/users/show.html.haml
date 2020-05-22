@@ -1,0 +1,29 @@
+.mypage
+  %h2.mypage__header= "マイページ"
+  .mypage__content
+    %h3 商品
+    %ul.mypage-lists 
+      %li.mypage-list
+        =link_to '購入リスト', '#', class: 'mypage-list__item bought-item'
+      %li.mypage-list
+        =link_to '出品リスト', '#', class: 'mypage-list__item sailing-item'
+      %li.mypage-list
+        =link_to 'お気に入り商品', '#', class: 'mypage-list__item fav-item'
+    %h3 設定
+    %ul.mypage-lists 
+      - if current_user.address.present?
+        %li.mypage-list
+          =link_to '発送元・お届け先住所変更', edit_address_path(@address), class: 'mypage-list__item shipping'
+      - else
+        %li.mypage-list
+          =link_to '発送元・お届け先住所変更', new_address_path, class: 'mypage-list__item shipping'
+      %li.mypage-list
+        =link_to 'メールアドレス変更', '#', class: 'mypage-list__item email'
+      %li.mypage-list
+        =link_to 'パスワード変更', '#', class: 'mypage-list__item password'
+      %li.mypage-list
+        =link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'mypage-list__item logout'
+    %h3 お支払い
+    %ul.mypage-lists 
+      %li.mypage-list
+        =link_to 'クレジットカード登録・変更', '#', class: 'mypage-list__item card'
