@@ -71,7 +71,7 @@
     .furima-main__pickup__content__lists
       - @items.zip(@images).each do |item,image|  
         .furima-main__pickup__content__lists__list
-          = link_to "root_path", class:"furima-main__pickup__content__lists__list__link" do
+          = link_to show2_items_path, class:"furima-main__pickup__content__lists__list__link" do
             .furima-main__pickup__content__lists__list__link__img
               = image_tag image.image, size: "120x200"
             .furima-main__pickup__content__lists__list__link__box
