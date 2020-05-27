@@ -64,9 +64,6 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 group :production do
   gem 'unicorn', '5.4.1'
 end
@@ -82,3 +79,7 @@ gem 'jp_prefecture'
 gem 'font-awesome-sass'
 gem 'pry-rails'
 gem 'payjp'
+gem 'rails-i18n'
+gem 'enum_help'
+gem 'rspec-rails'
+gem 'jquery-rails'

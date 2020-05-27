@@ -10,6 +10,43 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @category_parent_array = ["選択してください"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+    @items = Item.new
+    @items.item_images.new
+  end
+
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+
+  def create
+    @items = Item.new(item_params)
+    if @items.save
+      redirect_to root_path
+    else
+      redirect_to new_item_path
+    end
+  end
+
+  def show
+  end
+
+  def update
+    if @items.update(item_params)
+      redirect_to root_path
+    else
+      redirect_to edit_item_path
+    end
   end
   
 
@@ -34,6 +71,10 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def item_params
+    params.require(:item).permit(:name, :discription, :condition, :postage, :prefecture, :shipping_date, :price, :category_id, :brand_id, item_images_attributes: [ :image]).merge(saler_id: current_user.id)
+  end
 
   def set_params
     @item = Item.find(params[:id])
