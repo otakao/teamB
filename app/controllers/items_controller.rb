@@ -44,8 +44,6 @@ class ItemsController < ApplicationController
   end
 
   def payjp_api_key
-    Payjp.api_key= 'sk_test_6b4fc47bce523efc167dda60'
-    # Payjp.api_key= Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+    Payjp.api_key= Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
   end
-
 end
