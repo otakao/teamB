@@ -27,8 +27,6 @@
     %ul.mypage-lists
       - if current_user.card.present?
         %li.mypage-list
-          =link_to 'クレジットカード登録・変更', new_card_path, class: 'mypage-list__item card'
-        %li.mypage-list
           =link_to 'クレジットカード登録・変更', edit_card_path(current_user.card), class: 'mypage-list__item card'
       -else
         %li.mypage-list
