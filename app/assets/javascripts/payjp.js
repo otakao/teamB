@@ -29,7 +29,6 @@ $(function(){
         var token= response.id;
 
         form.append($('<input type="hidden" name="payjpToken" />').val(token));
-        // console.log(token);
         form.get(0).submit();
       }
     });
