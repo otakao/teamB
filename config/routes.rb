@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   end 
   resources :users, only: :show
   resources :addresses, only:[:new, :create, :edit, :update]
-  resources :cards, only: [:new, :create, :edit, :update, :destroy]
+  resources :cards, only: [:new, :create, :edit, :destroy]
 end

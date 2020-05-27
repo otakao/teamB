@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   require 'payjp'
-  before_action :payjp_api_key, only: [:create, :edit, :update]
+  before_action :payjp_api_key, only: [:create, :edit, :destroy]
 
   def new
   end
@@ -13,17 +13,25 @@ class CardsController < ApplicationController
     )
 
     @card= Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-    unless @card.save
+    if @card.save
+      redirect_to edit_card_path(@card)
+    else
       render :new
     end
   end
 
   def edit
     @card= current_user.card
+    customer= Payjp::Customer.retrieve(@card.customer_id)
+    @card = customer.cards.retrieve(@card.card_id)
   end
 
-  def update
-    
+  def destroy
+    @card= current_user.card
+    customer= Payjp::Customer.retrieve(@card.customer_id)
+    if @card.destroy
+      customer.delete
+    end
   end
 
   private
