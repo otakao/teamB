@@ -24,6 +24,12 @@
       %li.mypage-list
         =link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'mypage-list__item logout'
     %h3.lower お支払い
-    %ul.mypage-lists 
-      %li.mypage-list
-        =link_to 'クレジットカード登録・変更', '#', class: 'mypage-list__item card'
+    %ul.mypage-lists
+      - if current_user.card.present?
+        %li.mypage-list
+          =link_to 'クレジットカード登録・変更', new_card_path, class: 'mypage-list__item card'
+        %li.mypage-list
+          =link_to 'クレジットカード登録・変更', edit_card_path(current_user.card), class: 'mypage-list__item card'
+      -else
+        %li.mypage-list
+          =link_to 'クレジットカード登録・変更', new_card_path, class: 'mypage-list__item card'

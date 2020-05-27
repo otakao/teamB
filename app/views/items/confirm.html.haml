@@ -1,0 +1,91 @@
+%body
+  .confirmation-container
+    .confirmation-container__header
+      %h1.header-logo
+        = link_to image_tag("http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"), "root_path"
+
+
+  .confirmation-main
+    .confirmation-main__container
+      %h2.header-title 購入内容の確認
+      
+      %section.item-content
+        .item-content-inner
+          .item-content-inner__box
+            %h3.item-content__inner__box__image
+              ="画像"
+            .item-content-inner__box__detail
+              %p.item-content__inner__box__detail__name 
+                = "#{@item.name}"
+              %p.item-content__inner__box__detail__price
+                %span.price 
+                  = "¥#{@item.price}"
+                %span.item-shipping-fee （税込）送料込み
+
+      %section.item-content2
+        .item-content2__inner
+          .item-content2__inner__form
+          %ul.item-content2-price
+            %li.item-content2-price-content
+              .item-content2-price-textbox 支払金額
+              .item-content2-price-price-amount
+                %span.amount-price 
+                  = "¥#{@item.price}"
+                  
+          %ul.item-content2-point-exercise
+            %li.item-content2-point-exercise-content
+          %section.payment-info
+            .payment-info-inner
+              .content
+                %h3.left-content 支払い方法 
+                - if current_user.card.present?
+                  = link_to '登録してください', new_card_path, class: 'update_card'
+                  %p.payment-card-info
+                    クレジットカード
+                    %br/
+                    = "************#{@card.last4}"
+                    %br/
+                    -if @card.exp_month < 10
+                      = "有効期限 0#{@card.exp_month} / #{@card.exp_year}"
+                    -else
+                      = "有効期限 #{@card.exp_month} / #{@card.exp_year}"
+                  %figure.credit-card-logo
+                    -case @card.brand
+                    -when "Visa"
+                      =image_tag("//pcweb-assets.mercdn.net/assets/img/card/visa.svg?2246739708", size: "49x15")
+                    -when "MasterCard"
+                      =image_tag("//pcweb-assets.mercdn.net/assets/img/card/master-card.svg?2226206775", size: "49x15")
+                    -when "JCB"
+                      =image_tag("//pcweb-assets.mercdn.net/assets/img/card/jcb.svg?2226206775", size: "49x15")
+                    -when "American Express"
+                      =image_tag("//pcweb-assets.mercdn.net/assets/img/card/american_express.svg?2226206775", size: "49x15")
+                    -when "Diners Club"
+                      =image_tag("//pcweb-assets.mercdn.net/assets/img/card/dinersclub.svg?2226206775", size: "49x15")
+                    -when "Discover"
+                      =image_tag("//pcweb-assets.mercdn.net/assets/img/card/discover.svg?2226206775", size: "49x15")
+                - else 
+                  = link_to '登録してください', new_card_path, class: 'card_resistration'
+
+          %section.delivery-info
+            .delivery-info__inner
+              %h4.delivery-info-content 配送先
+              =link_to "登録してください", "#", class: 'address_resistration' 
+              %i.icon-plus-circle
+                
+
+          %section.purchase-button
+            =button_to "購入する", pay_item_path
+
+.confirmation-footer
+  .confirmation-footer__content
+    %ul.menu
+      %li プライバシーポリシー
+      %li FURIMA利用規約
+      %li 特定商取引に関する表記
+
+    .confirmation-footer__content__nav-company-logo
+      =image_tag("http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg",size: '80x65') 
+
+    %p
+      %small © FURIMA
+      %script{src: "//pcweb-assets.mercdn.net/assets/js/app.js?3178455151"}

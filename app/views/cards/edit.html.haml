@@ -1,0 +1,30 @@
+%section.payment-info
+  .payment-info-inner
+    - if current_user.card.present?
+      .content
+        %h3.left-content クレジットカード一覧
+        %p.payment-card-info
+          %br/
+          = "************#{@card.last4}"
+          %br/
+          -if @card.exp_month < 10
+            = "有効期限 0#{@card.exp_month} / #{@card.exp_year}"
+          -else
+            = "有効期限 #{@card.exp_month} / #{@card.exp_year}"
+        %figure.credit-card-logo
+          -case @card.brand
+          -when "Visa"
+            =image_tag("//pcweb-assets.mercdn.net/assets/img/card/visa.svg?2246739708", size: "49x15")
+          -when "MasterCard"
+            =image_tag("//pcweb-assets.mercdn.net/assets/img/card/master-card.svg?2226206775", size: "49x15")
+          -when "JCB"
+            =image_tag("//pcweb-assets.mercdn.net/assets/img/card/jcb.svg?2226206775", size: "49x15")
+          -when "American Express"
+            =image_tag("//pcweb-assets.mercdn.net/assets/img/card/american_express.svg?2226206775", size: "49x15")
+          -when "Diners Club"
+            =image_tag("//pcweb-assets.mercdn.net/assets/img/card/dinersclub.svg?2226206775", size: "49x15")
+          -when "Discover"
+            =image_tag("//pcweb-assets.mercdn.net/assets/img/card/discover.svg?2226206775", size: "49x15")
+      =button_to "削除する", card_path, method: :delete
+    - else 
+      = link_to '登録してください', new_card_path, class: 'card_resistration'

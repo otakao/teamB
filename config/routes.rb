@@ -9,7 +9,12 @@ Rails.application.routes.draw do
       get 'show2'
     end
     
+    member do
+      get 'confirm'
+      post 'pay'
+    end
   end 
   resources :users, only: :show
   resources :addresses, only:[:new, :create, :edit, :update]
+  resources :cards, only: [:new, :create, :edit, :destroy]
 end
