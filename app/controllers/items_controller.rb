@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   require 'payjp'
-  before_action :set_params, only: [:confirm, :pay]
+  before_action :set_params, only: [:confirm, :pay, :show]
   before_action :set_card, only: [:confirm, :pay]
   before_action :payjp_api_key, only: [:confirm, :pay]
 
   def index
-    @items = Item.all
+    @items = Item.includes(:saler)
     @images = ItemImage.all
   end
 
@@ -39,6 +39,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @category= @item.category
   end
 
   def update
@@ -47,10 +48,6 @@ class ItemsController < ApplicationController
     else
       redirect_to edit_item_path
     end
-  end
-  
-
-  def show2
   end
 
   def confirm
