@@ -79,7 +79,7 @@
                 = f.label :condition, "商品の状態"
                 %span 必須
               .exhibition-main__inner__section3__status__select
-                = f.select :condition, Item.conditions_i18n.invert, { include_blank: "選択してください" }
+                = f.select :condition, Item.conditions.keys, { include_blank: "選択してください" }
 
           %hr.exhibition-main__inner__line3
 
@@ -93,7 +93,7 @@
                 = f.label :postage, "配送料の負担"
                 %span 必須
               .exhibition-main__inner__section4__cost__select
-                = f.select :postage, Item.postages_i18n.invert, { include_blank: "選択してください" }
+                = f.select :postage, Item.postages.keys, { include_blank: "選択してください" }
             .exhibition-main__inner__section4__area
               .exhibition-main__inner__section4__area__title
                 = f.label :prefecture_name, "発送元の地域"
@@ -105,7 +105,7 @@
                 = f.label :shipping_date, "発送までの日数"
                 %span 必須
               .exhibition-main__inner__section4__days__select
-                = f.select :shipping_date, Item.shipping_dates_i18n.invert, { include_blank: "選択してください" }
+                = f.select :shipping_date, Item.shipping_dates.keys, { include_blank: "選択してください" }
 
 
           %hr.exhibition-main__inner__line4

@@ -8,19 +8,9 @@ class Item < ApplicationRecord
   has_many :item_images, dependent: :destroy
   accepts_nested_attributes_for :item_images, allow_destroy: true
 
-  enum condition:{
-    unused:          0, #新品、未使用
-    nearly_unused:   1, #未使用に近い
-    not_injured:     2, #目立った傷や汚れなし
-    bit_injured:     3, #やや傷や汚れあり
-    injured:         4, #傷や汚れあり
-    bad:             5,  #全体的に状態が悪い
-  }
+  enum condition: { 新品・未使用: 0, 未使用に近い: 1, 目立った傷や汚れなし: 2, やや傷や汚れあり: 3, 傷や汚れあり: 4, 全体的に状態が悪い: 5 }
 
-  enum postage:{
-    saler:           0, # 送料込み（出品者負担）
-    buyer:           1, # 着払い（購入者負担）
-  }
+  enum postage:{ 送料込み（出品者負担）: 0, 着払い（購入者負担）: 1}
 
   enum prefecture: {
     北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
@@ -30,14 +20,10 @@ class Item < ApplicationRecord
     滋賀県:25,京都府:26,大阪府:27,兵庫県:28,奈良県:29,和歌山県:30,
     鳥取県:31,島根県:32,岡山県:33,広島県:34,山口県:35,
     徳島県:36,香川県:37,愛媛県:38,高知県:39,
-    福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
+    福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47,
   }
 
-  enum shipping_date:{
-    twodays:         0, # 1~2日で発送
-    threedays:       1, # 2~3日で発送
-    oneweek:         2, # 4~7日で発送
-  }
+  enum shipping_date:{ １〜２日で発送: 0, ２〜３日で発送: 1, ４〜７日で発送: 2}
 
   
 end
