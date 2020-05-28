@@ -4,12 +4,8 @@ Rails.application.routes.draw do
    }
 
   root 'items#index'
-  resources :items do 
-    collection do
-      get 'show2'
-    end
-    
-  end 
+  resources :items 
   resources :users, only: :show
   resources :addresses, only:[:new, :create, :edit, :update]
+  
 end
