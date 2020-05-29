@@ -1,0 +1,89 @@
+.card-wrapper{
+  h2.card-title{
+    text-align: center;
+    border-bottom: 2px solid #f5f5f5;
+    font-size: 18px;
+  }
+
+  #charge-form{
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 343px;
+    .number,.cvc,button{
+      display: block;
+    }
+    label{
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .required-mark{
+      display: inline-block;
+      width: 30px;
+      height: 19px;
+      line-height: 19px;
+      text-align: center;
+      background-color: #3CCACE;
+      color: #ffffff;
+      font-size: 12px;
+      border-radius: 2px;
+    }
+
+    .card-number{
+      ul{
+        list-style: none;
+        display: flex;
+        padding-left: 5px;
+        margin-top: 8px;
+      }
+      .number{
+        width: 100%;
+        height: 48px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 8px;
+        font-size: 16px;
+        padding-left: 15px;
+      }
+    }
+    .card-cvc{
+      .cvc{
+        width: 100%;
+        height: 48px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 8px;
+        font-size: 16px;
+        padding-left: 15px;
+      }
+    }
+    .card-expiration{
+      margin-top: 20px;
+      select{
+        background-color: #ffffff;
+        width: 120px;
+        height: 48px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 8px;
+        font-size: 16px;
+        padding-left: 15px;
+      }
+
+      span{
+        font-size: 14px;
+        margin: 0 14px;
+      }
+    }
+    .submit-btn{
+      background-color: #3CCACE;
+      color: #ffffff;
+      border: 1px solid #3CCACE;
+      border-radius: 3px;
+      width: 100%;
+      height: 50px;
+      margin: 36px 0 0;
+      font-size: 14px;
+      margin-bottom: 80px;
+    }
+  }
+}
