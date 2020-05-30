@@ -5,74 +5,93 @@
     %li.narrow-downitem__category__list
       %i.fa.fa-angle-right.icon
     %li.narrow-downitem__category__list
-      = link_to "ベビー・キッズ" ,root_path 
+      = link_to "#{@category.root.name}" ,root_path 
     %li.narrow-downitem__category__list
       %i.fa.fa-angle-right 
     %li.narrow-downitem__category__list
-      = link_to "ベビー服(男女兼用)~95cm" ,root_path
+      = link_to "#{@category.parent.name}" ,root_path
     %li.narrow-downitem__category__list
       %i.fa.fa-angle-right
     %li.narrow-downitem__category__list
-      = link_to "アウター" ,root_path  
+      = link_to "#{@category.name}" ,root_path  
     %li.narrow-downitem__category__list
       %i.fa.fa-angle-right
     %li.narrow-downitem__category__list
-      = link_to "product3" ,root_path  
+      = link_to "#{@item.name}" ,item_path(@item)
 
 .item-main
   .item-main__show-item
     .item-main__show-item__main-content
       .item-main__show-item__main-content__content
         .item-main__show-item__main-content__content__item
-          %h.item-main__show-item__main-content__content__item__name product3
+          %h.item-main__show-item__main-content__content__item__name
+            = "#{@item.name}"
           .item-main__show-item__main-content__content__item__image
             %ul.item-main__show-item__main-content__content__item__image__details
               %li.item-main__show-item__main-content__content__item__image__details__pictures
-                = image_tag asset_path("a007.png"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__image'
+                = image_tag @first_image.image_url, class: 'item-main__show-item__main-content__content__item__image__details__pictures__image',size: "330x330"
                 %ul.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures
-                  %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1
-                    = image_tag asset_path("a007s.png"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1__image',size:"140x87"
-                  %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2
-                    = image_tag asset_path("a003.png"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2__image',size:"140x87"
-                  %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3
-                    = image_tag asset_path("a001.png"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3__image',size:"140x87"
+                  -@other_images.each do |image|
+                    %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1
+                      = image_tag image.image_url, class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1__image',size:"140x87"
+                  -# %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2
+                  -#   = image_tag image.image_url, class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2__image',size:"140x87"
+                  -# %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3
+                  -#   = image_tag asset_path("a001.png"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3__image',size:"140x87"
           .item-main__show-item__main-content__content__item__price
-            %span ¥30000
+            %span
+              ="¥#{@item.price}"
             .item-main__show-item__main-content__content__item__price__other
               %span (税込)
-              %span 送料込み
-          .item-main__show-item__main-content__content__item__text 親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+              -if @item.postage == "送料込み（出品者負担）"
+                %span 送料込み
+              -else
+                %span 着払い
+          .item-main__show-item__main-content__content__item__text 
+            = "#{@item.discription}"
+          - if user_signed_in? && current_user.id == @item.saler_id
+            =link_to '商品の編集', '#', class: 'edit_item-btn'
+            %span.or or
+            =link_to 'この商品を削除する', item_path(@item), method: :delete, class: 'destroy_item-btn'
+          - elsif user_signed_in?
+            =link_to '購入画面に進む', '#', class: 'confirm_item-btn'
           .item-main__show-item__main-content__content__item__main-table
             %table
               %tbody
                 %tr.test1
                   %th 出品者
-                  %td hoge
+                  %td 
+                    = "#{@item.saler.nickname}"
                 %tr.test2
                   %th カテゴリー
-                  %td 
-                    = link_to "ベビー・キッズ","root_path", class:"category1"             
-                    = link_to "ベビー服(男女兼用)~95cm","root_path", class:"category2"             
-                    = link_to "アウター","root_path", class:"category3"
+                  %td
+                    = link_to "#{@category.root.name}","root_path", class:"category1"             
+                    = link_to "#{@category.parent.name}","root_path", class:"category2"             
+                    = link_to "#{@category.name}","root_path", class:"category3"
             
                 %tr.test3
                   %th ブランド
                   %td
+                    ="#{@item.brand.name}"
                 %tr.test4
                   %th 商品サイズ
                   %td
                 %tr.test5
                   %th 商品の状態
-                  %td 未使用に近い
+                  %td
+                    ="#{@item.condition}"
                 %tr.test6
                   %th 配送料の負担
-                  %td 配送料込み(出品者負担)    
+                  %td
+                    ="#{@item.postage}"
                 %tr.test7
                   %th 発送元の地域
-                  %td 岩手県
+                  %td
+                    ="#{@item.prefecture}"
                 %tr.test8
                   %th 発送日の目安
-                  %td 4-7日で発送
+                  %td
+                    ="#{@item.shipping_date}"
 
               
           .item-main__show-item__main-content__content__item__option
@@ -102,6 +121,6 @@
             %i.fa.fa-angle-right.icon
 
         .item-main__show-item__main-content__more-item
-          = link_to "ベビー・キッズをもっと見る" ,root_path
+          = link_to "#{@category.root.name}をもっと見る" ,root_path
 
 
