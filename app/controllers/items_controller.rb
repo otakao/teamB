@@ -5,8 +5,11 @@ class ItemsController < ApplicationController
   before_action :payjp_api_key, only: [:confirm, :pay]
 
   def index
-    @items = Item.all
-    @images = ItemImage.all
+    @items = Item.includes(:saler)
+    @images = [] 
+    @items.each do |item|
+      @images << item.item_images.first    
+    end
   end
 
   def new

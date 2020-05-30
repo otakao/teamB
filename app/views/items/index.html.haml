@@ -73,7 +73,8 @@
         .furima-main__pickup__content__lists__list
           = link_to show2_items_path, class:"furima-main__pickup__content__lists__list__link" do
             .furima-main__pickup__content__lists__list__link__img
-              -# = image_tag image.image, size: "120x200"
+              = image_tag image.image.url, size: "120x200"
+              
             .furima-main__pickup__content__lists__list__link__box
               %h3.furima-main__pickup__content__lists__list__link__box__name 
                 = item.name
@@ -82,4 +83,3 @@
                   %li 
                     = item.price 
                     円 (税込)
- 
