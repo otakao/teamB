@@ -52,7 +52,7 @@
           font-weight: 600px;
           line-height: 1.4em;
         }
-        span {
+        .span1 {
           margin-left: 8px;
           font-size: 12px;
           padding: 0 4px;
@@ -80,6 +80,20 @@
           height: 150px;
           font-size: 12px;
           position: relative;
+          #image-box{
+            display: flex;
+            
+            #previews{
+              
+              .js-file_group{
+                .js-remove{
+                
+                }
+              }
+              
+            }
+          }
+          
 
           &__icon {
             fill: rgb(34, 34, 34);
@@ -515,15 +529,19 @@
             padding: 12px 0;
             height: 70px;
             width: 620px;
-            display: flex;
-            justify-content: space-between;
-
+            position: relative;
             &__text {
               font-size: 13px;
-              width: 126.031px;
-              height: 14px;
-              margin-right: 479.969px;
+              position: absolute;
+              top: 14px;
+              left: 0px;
             } 
+            .fee_data{
+              position: absolute;
+              top: 14px;
+              right: 0px;
+              
+            }
             span {
               font-size: 14px;
               width: 14px;
@@ -544,14 +562,21 @@
             padding-top: 12px;
             height: 58px;
             width: 620px;
-            display: flex;
-            justify-content: space-between;
+            position: relative;
+            
 
             &__text {
-              margin-right: 550px;
-              width: 56px;
-              height: 14px;
+              position: absolute;
+              top: 14px;
+              left: 0px;
               font-size: 13px;
+            }
+
+            .profit_data{
+              position: absolute;
+              top: 14px;
+              right: 0px;
+              
             }
             span {
               font-size: 14px;

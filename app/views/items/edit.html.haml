@@ -1,0 +1,163 @@
+%body
+  .exhibition
+    .exhibition-header
+      %h1.header-logo
+        =link_to image_tag("http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"), root_path 
+
+
+     
+      .exhibition-main
+        .exhibition-main__inner
+          =form_for (@items) do |f|  
+          .exhibition-main__inner__section1
+            .exhibition-main__inner__section1__picture
+              %label 出品画像
+              %span 必須
+            %p.exhibition-main__inner__section1__picture__content
+              最大10枚までアップロードできます
+
+            .exhibition-main__inner__section1__image-box{id: "preview-box"}
+              #image-box
+                #previews
+                  - if @items.persisted?
+                    -@items.item_images.each_with_index do |image, i|
+                      = image_tag image.image.url, data: { index: i },width: "100", height: "100"
+                      
+                =f.fields_for :item_images do |i|
+                  .js-file_group{"data-index" => "#{i.index}"}
+                    %label.label
+                    = i.file_field :image, class: 'js-file'
+                    %span.js-remove
+                      削除
+                - if @items.persisted?
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                
+                - if @items.persisted?
+                  .js-file_group{"data-index" => "#{i.index}"}
+                    = file_field_tag :image, name: "item_images[images_attributes][#{@items.images.count}][image]", class: 'js-file'
+                    .js-remove
+                      削除
+             
+
+          %hr.exhibition-main__inner__line1   
+
+          .exhibition-main__inner__section2
+            .exhibition-main__inner__section2__top
+              .exhibition-main__inner__section2__top__title 
+                = f.label :name, "商品名"
+                %span 必須
+              .exhibition-main__inner__section2__top__text
+                = f.text_field :name, class: "top-text", size: 40,placeholder: "40文字まで"
+            .exhibition-main__inner__section2__content
+              .exhibition-main__inner__section2__content__title
+                = f.label :discription, "商品説明"
+                %span 必須
+              .exhibition-main__inner__section2__content__text
+                = f.text_area :discription, class: "content-text", size: "50*20",placeholder: "商品の説明 (必須 1000文字以内)\n (色、素材、重さ、定価、注意点など)\n\n例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです"
+              .exhibition-main__inner__section2__content__word-count
+                0/1000
+
+          %hr.exhibition-main__inner__line2
+
+          .exhibition-main__inner__section3
+            .exhibition-main__inner__section3__title
+              商品の詳細
+            .exhibition-main__inner__section3__category
+              .exhibition-main__inner__section3__category__title
+              = f.label :category_id, "カテゴリー", class: 'listing-default__label'
+              %span 必須
+              .exhibition-main__inner__section3__category__select
+                .exhibition-main__inner__section3__category__select__box
+                  = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+            .exhibition-main__inner__section3__brand
+              .exhibition-main__inner__section3__brand__title
+                = f.label :brand_id, "ブランド"
+                %span 任意
+              .exhibition-main__inner__section3__brand__text
+                = f.number_field :brand_id, class: "top-text", size: 40,placeholder: "例) シャネル"
+            .exhibition-main__inner__section3__status
+              .exhibition-main__inner__section3__status__title
+                = f.label :condition, "商品の状態"
+                %span 必須
+              .exhibition-main__inner__section3__status__select
+                = f.select :condition, Item.conditions_i18n.invert, { include_blank: "選択してください" }
+
+          %hr.exhibition-main__inner__line3
+
+
+          .exhibition-main__inner__section4
+            .exhibition-main__inner__section4__top
+              .exhibition-main__inner__section4__top__text
+                配送について 
+            .exhibition-main__inner__section4__cost
+              .exhibition-main__inner__section4__cost__title
+                = f.label :postage, "配送料の負担"
+                %span 必須
+              .exhibition-main__inner__section4__cost__select
+                = f.select :postage, Item.postages_i18n.invert, { include_blank: "選択してください" }
+            .exhibition-main__inner__section4__area
+              .exhibition-main__inner__section4__area__title
+                = f.label :prefecture_name, "発送元の地域"
+                %span 必須
+              .exhibition-main__inner__section4__area__select
+                = f.select :prefecture, Item.prefectures.keys, {include_blank: '選択してください'}
+            .exhibition-main__inner__section4__days
+              .exhibition-main__inner__section4__days__title
+                = f.label :shipping_date, "発送までの日数"
+                %span 必須
+              .exhibition-main__inner__section4__days__select
+                = f.select :shipping_date, Item.shipping_dates_i18n.invert, { include_blank: "選択してください" }
+
+
+          %hr.exhibition-main__inner__line4
+
+
+          .exhibition-main__inner__section5
+            .exhibition-main__inner__section5__top
+              価格 (￥300~9,999,999)
+            .exhibition-main__inner__section5__box
+              .exhibition-main__inner__section5__box__selling
+                .exhibition-main__inner__section5__box__selling__text
+                  = f.label :price, "販売価格"
+                  %span 必須
+                  .exhibition-main__inner__section5__box__selling__text__input-field
+                    = f.number_field :price, placeholder: "0", class: "top-text", size: 10, id: "price_calc"
+              .exhibition-main__inner__section5__box__sales-commission
+                .exhibition-main__inner__section5__box__sales-commission__text
+                  販売手数料 (10%)
+                .fee_data
+                %span.exhibition-main__inner__section5__box__sales-commission__line
+              %hr.exhibition-main__inner__section5__box__sales__line
+              .exhibition-main__inner__section5__box__sales-profit
+                .exhibition-main__inner__section5__box__sales-profit__text
+                  販売利益
+                .profit_data
+                %span.exhibition-main__inner__section5__box__sales-profit__line
+
+
+          .exhibition-main__inner__section6
+            .exhibition-main__inner__section6__top
+              = f.submit "出品する", class: "top-6"
+            .exhibition-main__inner__section6__middle
+              = f.submit "下書きに保存", class: "middle-6"
+            .exhibition-main__inner__section6__under
+              =link_to "もどる", "#" 
+          %p.exhibition-main__inner__section7
+            禁止されている行為および出品物を必ずご確認ください。
+            偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。
+            また、出品をもちまして加盟店規約に同意したことになります。
+
+
+    .footer  
+      .footer__nav-company-rule
+        %ul.menu
+          %li プライバシーポリシー
+          %li FURIMA利用規約
+          %li 特定商取引に関する表記
+
+      .footer__nav-company-logo
+        =link_to image_tag("http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg",size: '80x65') 
+
+      %p
+        %small © FURIMA
+        %script{src: "//pcweb-assets.mercdn.net/assets/js/app.js?3178455151"}
