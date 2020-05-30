@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   require 'payjp'
-  before_action :set_params, only: [:show, :destroy, :confirm, :pay]
+  before_action :set_params, only: [:show, :destroy, :edit, :update, :confirm, :pay]
   before_action :set_card, only: [:confirm, :pay]
   before_action :payjp_api_key, only: [:confirm, :pay]
 
@@ -46,10 +46,10 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @items.update(item_params)
+    if @item.update(item_params)
       redirect_to root_path
     else
-      render edit_item_path
+      render edit_item_path(@item)
     end
   end
 
@@ -79,8 +79,6 @@ class ItemsController < ApplicationController
         customer: @card.customer_id,
         currency: 'jpy',
       )
-    else
-
     end
   end
 
