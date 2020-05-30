@@ -2,7 +2,7 @@
   .furima-header__content
     = form_for root_path do |f|
       .furima-header__content__main
-        = link_to image_tag("logo.png", class: "furima-header__content__main__logo"), "root_path"
+        = link_to image_tag("logo.png", class: "furima-header__content__main__logo"), root_path
         .furima-header__content__main__search    
           = f.text_field :name, placeholder: "キーワードから探す", class: "furima-header__content__main__search__input"
           = image_submit_tag ("icon-search1.png"), class: "furima-header__content__main__search__icon", value: ""

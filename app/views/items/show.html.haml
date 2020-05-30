@@ -5,19 +5,19 @@
     %li.narrow-downitem__category__list
       %i.fa.fa-angle-right.icon
     %li.narrow-downitem__category__list
-      = link_to "ベビー・キッズ" ,root_path 
+      = link_to "#{@category.root.name}" ,root_path 
     %li.narrow-downitem__category__list
       %i.fa.fa-angle-right 
     %li.narrow-downitem__category__list
-      = link_to "ベビー服(男女兼用)~95cm" ,root_path
+      = link_to "#{@category.parent.name}" ,root_path
     %li.narrow-downitem__category__list
       %i.fa.fa-angle-right
     %li.narrow-downitem__category__list
-      = link_to "アウター" ,root_path  
+      = link_to "#{@category.name}" ,root_path  
     %li.narrow-downitem__category__list
       %i.fa.fa-angle-right
     %li.narrow-downitem__category__list
-      = link_to "product3" ,root_path  
+      = link_to "#{@item.name}" ,item_path(@item)
 
 .item-main
   .item-main__show-item
@@ -29,14 +29,15 @@
           .item-main__show-item__main-content__content__item__image
             %ul.item-main__show-item__main-content__content__item__image__details
               %li.item-main__show-item__main-content__content__item__image__details__pictures
-                = image_tag asset_path("a007.png"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__image'
+                = image_tag @first_image.image_url, class: 'item-main__show-item__main-content__content__item__image__details__pictures__image',size: "330x330"
                 %ul.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures
-                  %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1
-                    = image_tag asset_path("a007s.png"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1__image',size:"140x87"
-                  %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2
-                    = image_tag asset_path("a003.png"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2__image',size:"140x87"
-                  %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3
-                    = image_tag asset_path("a001.png"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3__image',size:"140x87"
+                  -@other_images.each do |image|
+                    %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1
+                      = image_tag image.image_url, class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1__image',size:"140x87"
+                  -# %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2
+                  -#   = image_tag image.image_url, class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2__image',size:"140x87"
+                  -# %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3
+                  -#   = image_tag asset_path("a001.png"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3__image',size:"140x87"
           .item-main__show-item__main-content__content__item__price
             %span
               ="¥#{@item.price}"
@@ -51,8 +52,8 @@
           - if user_signed_in? && current_user.id == @item.saler_id
             =link_to '商品の編集', '#', class: 'edit_item-btn'
             %span.or or
-            =link_to 'この商品を削除する', '#', class: 'destroy_item-btn'
-          - else
+            =link_to 'この商品を削除する', item_path(@item), method: :delete, class: 'destroy_item-btn'
+          - elsif user_signed_in?
             =link_to '購入画面に進む', '#', class: 'confirm_item-btn'
           .item-main__show-item__main-content__content__item__main-table
             %table
@@ -120,6 +121,6 @@
             %i.fa.fa-angle-right.icon
 
         .item-main__show-item__main-content__more-item
-          = link_to "ベビー・キッズをもっと見る" ,root_path
+          = link_to "#{@category.root.name}をもっと見る" ,root_path
 
 

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   require 'payjp'
-  before_action :set_params, only: [:confirm, :pay, :show]
+  before_action :set_params, only: [:show, :destroy, :confirm, :pay]
   before_action :set_card, only: [:confirm, :pay]
   before_action :payjp_api_key, only: [:confirm, :pay]
 
@@ -40,6 +40,9 @@ class ItemsController < ApplicationController
 
   def show
     @category= @item.category
+    @images= @item.item_images
+    @first_image= @images.first
+    @other_images= @images.where.not(id: @images.select('min(id)'))
   end
 
   def update
@@ -48,6 +51,11 @@ class ItemsController < ApplicationController
     else
       redirect_to edit_item_path
     end
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to root_path
   end
 
   def confirm

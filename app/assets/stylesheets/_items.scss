@@ -35,6 +35,7 @@
           padding: 0 0 0 5px;
         }
         &__icon{
+          display: inline-block;
           width: 30px;
           border: 0;
           cursor: pointer;
@@ -102,6 +103,8 @@
           }
           .category__parent,.category__child,.category__grandchild{
             display: none;
+            border-left: 1px solid #ccc;
+            z-index: 20;
           }
           .category__list{
             position: absolute;
@@ -346,14 +349,15 @@
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
         padding-bottom: 26px;
         &__list{
           width: 220px;
+          margin-left: 20px;
           &__link{
             background-color: #fff;
             display: inline-block;
             text-decoration: none;
+            box-shadow: 0 2px 20px rgba(0,0,0,.18);
             &__img{
               width: 220px;
               height: 210px;
@@ -451,10 +455,11 @@
 }
 
 .sell-btn{
-  width: 100px;
-  background: skyblue;
+  width: 160px;
+  height: 160px;
+  background: $whiteBlue;
   text-align: center;
-  border-radius: 4%;
+  border-radius: 50%;
   bottom: 32px;
   right: 32px;
   position: fixed;
