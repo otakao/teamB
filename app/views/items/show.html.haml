@@ -34,10 +34,6 @@
                   -@other_images.each do |image|
                     %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1
                       = image_tag image.image_url, class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list1__image',size:"140x87"
-                  -# %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2
-                  -#   = image_tag image.image_url, class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list2__image',size:"140x87"
-                  -# %li.item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3
-                  -#   = image_tag asset_path("a001.png"), class: 'item-main__show-item__main-content__content__item__image__details__pictures__sub-pictures__list3__image',size:"140x87"
           .item-main__show-item__main-content__content__item__price
             %span
               ="¥#{@item.price}"
