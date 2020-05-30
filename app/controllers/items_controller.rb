@@ -58,6 +58,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else 
       render item_path(@item)
+    end
   end
 
   def confirm
