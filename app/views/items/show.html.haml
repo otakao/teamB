@@ -46,7 +46,7 @@
           .item-main__show-item__main-content__content__item__text 
             = "#{@item.discription}"
           - if user_signed_in? && current_user.id == @item.saler_id
-            =link_to '商品の編集', '#', class: 'edit_item-btn'
+            =link_to '商品の編集', edit_item_path(@item), class: 'edit_item-btn'
             %span.or or
             =link_to 'この商品を削除する', item_path(@item), method: :delete, class: 'destroy_item-btn'
           - elsif user_signed_in?
@@ -65,10 +65,10 @@
                     = link_to "#{@category.parent.name}","root_path", class:"category2"             
                     = link_to "#{@category.name}","root_path", class:"category3"
             
-                %tr.test3
-                  %th ブランド
-                  %td
-                    ="#{@item.brand.name}"
+                -# %tr.test3
+                -#   %th ブランド
+                -#   %td
+                -#     ="#{@item.brand.name}"
                 %tr.test4
                   %th 商品サイズ
                   %td
