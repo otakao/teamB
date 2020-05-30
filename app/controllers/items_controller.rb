@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   require 'payjp'
-  before_action :set_params, only: [:confirm, :pay]
+  before_action :set_params, only: [:show, :destroy, :edit, :update, :confirm, :pay]
   before_action :set_card, only: [:confirm, :pay]
   before_action :payjp_api_key, only: [:confirm, :pay]
 
@@ -37,26 +37,40 @@ class ItemsController < ApplicationController
     if @items.save
       redirect_to root_path
     else
-      redirect_to new_item_path
+      render new_item_path
     end
   end
 
   def show
+    @category= @item.category
+    @images= @item.item_images
+    @first_image= @images.first
+    @other_images= @images.where.not(id: @images.select('min(id)'))
+  end
+
+  def edit
+    @items = Item.find(params[:id])
   end
 
   def update
-    if @items.update(item_params)
+    if @item.update(item_params)
       redirect_to root_path
     else
-      redirect_to edit_item_path
+      render edit_item_path(@item)
     end
   end
-  
 
-  def show2
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else 
+      render item_path(@item)
+    end
   end
 
   def confirm
+    @image= @item.item_images.first
+    @address= current_user.address
     if @card.present?
       customer= Payjp::Customer.retrieve(@card.customer_id)
       @card= customer.cards.retrieve(@card.card_id)
@@ -64,19 +78,21 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @item.update(buyer_id: current_user.id)
+    if @card.present?
+      @item.update(buyer_id: current_user.id)
 
-    charge= Payjp::Charge.create(
-      amount: @item.price,
-      customer: @card.customer_id,
-      currency: 'jpy',
-    )
+      charge= Payjp::Charge.create(
+        amount: @item.price,
+        customer: @card.customer_id,
+        currency: 'jpy',
+      )
+    end
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :discription, :condition, :postage, :prefecture, :shipping_date, :price, :category_id, :brand_id, item_images_attributes: [ :image]).merge(saler_id: current_user.id)
+    params.require(:item).permit(:name, :discription, :condition, :postage, :prefecture, :shipping_date, :price, :category_id, :brand_id, item_images_attributes: [ :image, :_destroy, :id]).merge(saler_id: current_user.id)
   end
 
   def set_params

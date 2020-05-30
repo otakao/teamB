@@ -66,15 +66,13 @@
   .furima-main__pickup
     %h2.furima-main__pickup__category ピックアップアイテム
     .furima-main__pickup__content
-      = link_to show2_items_path ,class:"furima-main__pickup__content__link" do
-        %h3.furima-main__pickup__content__link__title 新規投稿商品
+      %h3.furima-main__pickup__content__link__title 新規投稿商品
     .furima-main__pickup__content__lists
-      - @items.zip(@images).each do |item,image|  
+      - @items.zip(@images).each do |item,image|
         .furima-main__pickup__content__lists__list
-          = link_to show2_items_path, class:"furima-main__pickup__content__lists__list__link" do
+          = link_to item_path(item), class:"furima-main__pickup__content__lists__list__link" do
             .furima-main__pickup__content__lists__list__link__img
-              = image_tag image.image.url, size: "120x200"
-              
+              = image_tag image.image.url, size: "120x200"              
             .furima-main__pickup__content__lists__list__link__box
               %h3.furima-main__pickup__content__lists__list__link__box__name 
                 = item.name
@@ -83,3 +81,14 @@
                   %li 
                     = item.price 
                     円 (税込)
+-if user_signed_in?
+  = link_to new_item_path do
+    .sell-btn
+      %p.sell-btn__text 出品する
+      = image_tag("icon_camera.png", width: "60%")
+- else
+  = link_to new_user_registration_path do
+    .sell-btn
+      %p.sell-btn__text 出品する
+      = image_tag("icon_camera.png", width: "60%")
+ 

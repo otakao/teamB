@@ -8,6 +8,18 @@ class Item < ApplicationRecord
   has_many :item_images, dependent: :destroy
   accepts_nested_attributes_for :item_images, allow_destroy: true
 
+  with_options presence: true do
+    validates :name
+    validates :discription
+    validates :price
+    validates :condition
+    validates :prefecture
+    validates :shipping_date
+    validates :category_id
+  end
+
+
+
   enum condition: { 新品・未使用: 0, 未使用に近い: 1, 目立った傷や汚れなし: 2, やや傷や汚れあり: 3, 傷や汚れあり: 4, 全体的に状態が悪い: 5 }
 
   enum postage:{ 送料込み（出品者負担）: 0, 着払い（購入者負担）: 1}
