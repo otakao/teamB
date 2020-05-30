@@ -5,39 +5,39 @@
         =link_to image_tag("http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"), root_path 
 
 
-     
+    =form_for (@items) do |f|   
       .exhibition-main
         .exhibition-main__inner
-          =form_for (@items) do |f|  
           .exhibition-main__inner__section1
             .exhibition-main__inner__section1__picture
               %label 出品画像
-              %span 必須
+              %span.span1 必須
             %p.exhibition-main__inner__section1__picture__content
               最大10枚までアップロードできます
 
-            .exhibition-main__inner__section1__image-box{id: "preview-box"}
+
+            .exhibition-main__inner__section1__image-box
               #image-box
                 #previews
                   - if @items.persisted?
                     -@items.item_images.each_with_index do |image, i|
                       = image_tag image.image.url, data: { index: i },width: "100", height: "100"
                       
-                =f.fields_for :item_images do |i|
-                  .js-file_group{"data-index" => "#{i.index}"}
-                    %label.label
-                    = i.file_field :image, class: 'js-file'
-                    %span.js-remove
-                      削除
-                - if @items.persisted?
-                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                
-                - if @items.persisted?
-                  .js-file_group{"data-index" => "#{i.index}"}
-                    = file_field_tag :image, name: "item_images[images_attributes][#{@items.images.count}][image]", class: 'js-file'
-                    .js-remove
-                      削除
-             
+                  =f.fields_for :item_images do |i|
+                    .js-file_group{"data-index" => "#{i.index}"}
+                      = i.file_field :image, class: 'js-file'
+                      %span.js-remove
+                        削除
+                    - if @items.persisted?
+                      = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                  
+                  - if @items.persisted?
+                    .js-file_group{"data-index" => "#{i.index}"}
+                      = file_field_tag :image, name: "item_images[images_attributes][#{@items.images.count}][image]", class: 'js-file'
+                      .js-remove
+                        削除
+            
+
 
           %hr.exhibition-main__inner__line1   
 
