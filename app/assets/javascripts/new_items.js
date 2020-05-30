@@ -3,8 +3,8 @@ $(function () {
   const buildFileField = (num)=> {
     const html = `<div data-index="${num}" class="js-file_group">
                   <input class="js-file" type="file"
-                  name="item[item_images_attributes][${num}][src]"
-                  id="item_images_attributes_${num}_src"><br>
+                  name="item[item_images_attributes][${num}][image]"
+                  id="item_images_attributes_${num}_image"><br>
                   <div class="js-remove">削除</div>
                   </div>`;
     return html;
