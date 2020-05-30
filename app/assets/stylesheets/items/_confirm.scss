@@ -28,8 +28,9 @@
     width: 700px;
     margin: 0 auto;
     background-color: $mainWhiteColor;
-    h2{
-      font-size:22px;
+    h2.header-title{
+      font-size: 22px;
+      font-weight: bold;
       padding: 32px;
       text-align: center;
       background-color: $mainWhiteColor;
@@ -165,11 +166,12 @@
         margin: 0;
         padding: 0;
       }
-        h3{
+        h3.left-content{
           font-size:14px;
           float: left;
           background-color: $mainWhiteColor;
           display: block;
+          font-weight: bold;
           }
           a.update_card{
             display: inline-block;
@@ -222,12 +224,17 @@
         max-width: 343px;
         margin: 0 auto;
         background-color: $mainWhiteColor;
-        h4{
+        h4.delivery-info-title{
           margin: 0;
           font-size: 14px;
           background-color: $mainWhiteColor;
-            
+          font-weight: bold;
         }
+
+        p.delivery-info-content{
+          margin-top: 15px;
+        }
+
         .address_resistration{
           display: inline-block;
           text-decoration: none;
@@ -239,8 +246,9 @@
         section.purchase-button{
           padding-top: 32px;
           background-color: $mainWhiteColor;
+          
         }
-        input{
+        .purchase-button__not-disabled{
           border: 1px solid #3CCACE;
           background-color:  #3CCACE;
           border-radius: 3px;
@@ -250,6 +258,16 @@
           line-height:48px;
           font-size:14px;
         }
+        .purchase-button__disabled{
+          border: 1px solid #ccc;
+          background-color: #aaa;
+          border-radius: 3px;
+          color: $mainWhiteColor;
+          display: block;
+          width: 100%;
+          line-height:48px;
+          font-size:14px;
+          }
 
   
 }

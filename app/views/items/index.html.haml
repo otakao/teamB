@@ -81,4 +81,14 @@
                   %li 
                     = item.price 
                     円 (税込)
+-if user_signed_in?
+  = link_to new_item_path do
+    .sell-btn
+      %p.sell-btn__text 出品する
+      = image_tag("icon_camera.png", width: "60%")
+- else
+  = link_to new_user_registration_path do
+    .sell-btn
+      %p.sell-btn__text 出品する
+      = image_tag("icon_camera.png", width: "60%")
  
