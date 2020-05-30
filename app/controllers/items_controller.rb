@@ -53,6 +53,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else 
+      render item_path(@item)
+  end
+
   def confirm
     if @card.present?
       customer= Payjp::Customer.retrieve(@card.customer_id)
