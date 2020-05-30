@@ -66,6 +66,8 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+    @image= @item.item_images.first
+    @address= current_user.address
     if @card.present?
       customer= Payjp::Customer.retrieve(@card.customer_id)
       @card= customer.cards.retrieve(@card.card_id)
@@ -73,13 +75,17 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @item.update(buyer_id: current_user.id)
+    if @card.present?
+      @item.update(buyer_id: current_user.id)
 
-    charge= Payjp::Charge.create(
-      amount: @item.price,
-      customer: @card.customer_id,
-      currency: 'jpy',
-    )
+      charge= Payjp::Charge.create(
+        amount: @item.price,
+        customer: @card.customer_id,
+        currency: 'jpy',
+      )
+    else
+
+    end
   end
 
   private
