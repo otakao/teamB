@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @images = ItemImage.all
+    @images = ItemImage.all  
   end
 
   def new
@@ -48,9 +48,9 @@ class ItemsController < ApplicationController
       redirect_to edit_item_path
     end
   end
-  
 
-  def show2
+  def show
+    @item = Item.find(params[:id])
   end
 
   def confirm
