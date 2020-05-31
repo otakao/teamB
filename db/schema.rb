@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 202004181055447) do
+ActiveRecord::Schema.define(version: 2020041810554410) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name", null: false
@@ -76,20 +76,22 @@ ActiveRecord::Schema.define(version: 202004181055447) do
     t.string "name", null: false
     t.text "discription", null: false
     t.integer "price", null: false
-    t.integer "condition", null: false
-    t.integer "postage", null: false
-    t.integer "prefecture", null: false
-    t.integer "shipping_date", null: false
     t.bigint "saler_id"
     t.bigint "buyer_id"
     t.bigint "category_id"
+    t.bigint "postage_id"
+    t.bigint "shipping_date_id"
+    t.bigint "condition_id"
     t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["condition_id"], name: "index_items_on_condition_id"
+    t.index ["postage_id"], name: "index_items_on_postage_id"
     t.index ["saler_id"], name: "index_items_on_saler_id"
+    t.index ["shipping_date_id"], name: "index_items_on_shipping_date_id"
   end
 
   create_table "postages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -131,6 +133,9 @@ ActiveRecord::Schema.define(version: 202004181055447) do
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
+  add_foreign_key "items", "conditions"
+  add_foreign_key "items", "postages"
+  add_foreign_key "items", "shipping_dates"
   add_foreign_key "items", "users", column: "buyer_id"
   add_foreign_key "items", "users", column: "saler_id"
 end
