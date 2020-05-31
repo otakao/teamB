@@ -13,7 +13,7 @@
         .item-content-inner
           .item-content-inner__box
             %h3.item-content__inner__box__image
-              ="画像"
+              =image_tag @image.image_url, size: '80x80'
             .item-content-inner__box__detail
               %p.item-content__inner__box__detail__name 
                 = "#{@item.name}"
@@ -39,7 +39,7 @@
               .content
                 %h3.left-content 支払い方法 
                 - if current_user.card.present?
-                  = link_to '登録してください', new_card_path, class: 'update_card'
+                  = link_to '変更する', new_card_path, class: 'update_card'
                   %p.payment-card-info
                     クレジットカード
                     %br/
@@ -68,13 +68,23 @@
 
           %section.delivery-info
             .delivery-info__inner
-              %h4.delivery-info-content 配送先
-              =link_to "登録してください", "#", class: 'address_resistration' 
-              %i.icon-plus-circle
+              %h4.delivery-info-title 配送先
+              -if current_user.address.present?
+                %p.delivery-info-content
+                  ="〒#{@address.postal_code}"
+                  %br/
+                  ="#{@address.prefecture_name} #{@address.city} #{@address.street}"
+                  %br/
+                  ="#{@address.last_name} #{@address.first_name}"
+              -else
+                =link_to "登録してください", "#", class: 'address_resistration' 
                 
 
           %section.purchase-button
-            =button_to "購入する", pay_item_path
+            -if @card.present? && current_user.address.present?
+              =button_to "購入する", pay_item_path, data: {confirm: '購入を確定しますか？'}, class: 'purchase-button__not-disabled'
+            - else
+              =button_to "購入する", pay_item_path, disabled: true, class: 'purchase-button__disabled'
 
 .confirmation-footer
   .confirmation-footer__content

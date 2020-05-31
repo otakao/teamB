@@ -50,7 +50,7 @@
             %span.or or
             =link_to 'この商品を削除する', item_path(@item), method: :delete, class: 'destroy_item-btn'
           - elsif user_signed_in?
-            =link_to '購入画面に進む', '#', class: 'confirm_item-btn'
+            =link_to '購入画面に進む', confirm_item_path(@item), class: 'confirm_item-btn'
           .item-main__show-item__main-content__content__item__main-table
             %table
               %tbody

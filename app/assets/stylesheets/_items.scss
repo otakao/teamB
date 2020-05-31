@@ -391,6 +391,7 @@
     background-position: center;
     padding: 100px 40px;
     position: relative;
+    z-index: 10;
     &__content{
       text-align: center;
       color: white;
@@ -464,6 +465,7 @@
   right: 32px;
   position: fixed;
   padding: 14px;
+  z-index: 20;
   &__text{
     color: white;
     display: block;

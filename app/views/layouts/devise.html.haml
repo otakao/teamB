@@ -5,11 +5,11 @@
     %title FreemarketSample68b
     %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"}
     %script{src: "https://js.pay.jp/", type: "text/javascript"};
+    :javascript
+      Payjp.setPublicKey('pk_test_9803a05e60bf76b41efc634f');
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    = render 'items/header'
     = yield
-    = render 'items/footer'
