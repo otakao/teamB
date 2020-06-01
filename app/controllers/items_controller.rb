@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   require 'payjp'
-  before_action :set_params, only: [:show, :destroy, :confirm, :pay]
+  before_action :set_params, only: [:show, :edit, :update, :destroy, :confirm, :pay]
   before_action :set_card, only: [:confirm, :pay]
   before_action :payjp_api_key, only: [:confirm, :pay]
 
@@ -17,8 +17,8 @@ class ItemsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
-    @items = Item.new
-    @items.item_images.new
+    @item = Item.new
+    @item.item_images.new
   end
 
   def get_category_children
@@ -33,8 +33,8 @@ class ItemsController < ApplicationController
 
 
   def create
-    @items = Item.new(item_params)
-    if @items.save
+    @item = Item.new(item_params)
+    if @item.save
       redirect_to root_path
     else
       render new_item_path
@@ -49,11 +49,28 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @items = Item.find(params[:id])
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+    @category_parent_array = ['選択してください']
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
+
   end
 
   def update
-    if @items.update(item_params)
+    if @item.update(item_params)
       redirect_to root_path
     else
       render edit_item_path
