@@ -23,19 +23,19 @@
                     -@item.item_images.each_with_index do |image, i|
                       = image_tag image.image.url, data: { index: i },width: "100", height: "100"
                       
-                  =f.fields_for :item_images do |image|
-                    .js-file_group{"data-index" => "#{image.index}"}
-                      = image.file_field :image, class: 'js-file'
-                      %span.js-remove
-                        削除
-                    - if @item.persisted?
-                      = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                  
+                =f.fields_for :item_images do |image|
+                  .js-file_group{"data-index" => "#{image.index}"}
+                    = image.file_field :image, class: 'js-file'
+                    %span.js-remove
+                      削除
                   - if @item.persisted?
-                    .js-file_group{"data-index" => "#{@item.item_images.index}"}
-                      = file_field_tag :image, name: "item[item_images_attributes][#{@item.item_images.count}][image]", class: 'js-file'
-                      .js-remove
-                        削除
+                    = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                
+                - if @item.persisted?
+                  .js-file_group{"data-index" => "#{@item.item_images.count}"}
+                    = file_field_tag :image, name: "item[item_images_attributes][#{@item.item_images.count}][image]", class: 'js-file'
+                    .js-remove
+                      削除
             
 
 
@@ -69,10 +69,12 @@
               .exhibition-main__inner__section3__category__select
                 .exhibition-main__inner__section3__category__select__box
                   = f.select :category_id, @category_parent_array, {selected:@item.category.parent.parent.name}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                .exhibition-main__inner__section3__category__select__box#children_wrapper
-                  = f.select :category_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "選択してください", selected: @item.category.parent.id}),{}, {class: 'category-wrapper__category form-control', id: 'child_category'}
-                .exhibition-main__inner__section3__category__select__box#grandchildren_wrapper
-                  = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "選択してください", selected: @item.category.id}),{}, {class: 'category-wrapper__category form-control', id: 'grandchild_category'}
+                .exhibition-main__inner__section3__category__select__box
+                  .exhibition-main__inner__section3__category__select__added#children_wrapper
+                    = f.select :category_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, { selected: @item.category.parent.id}),{}, {class: 'exhibition-main__inner__section3__categoryselect__box--select', id: 'child_wraper'}
+                .exhibition-main__inner__section3__category__select__box
+                  .exhibition-main__inner__section3__category__select__box--select#grandchildren_wrapper
+                  = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, { selected: @item.category.id}),{}, {class: 'exhibition-main__inner__section3__categoryselect__box--select', id: 'grandchild_wrapper'}
             .exhibition-main__inner__section3__brand
               .exhibition-main__inner__section3__brand__title
                 = f.label :brand_id, "ブランド"
