@@ -1,14 +1,18 @@
 class ItemsController < ApplicationController
   require 'payjp'
-  before_action :set_params, only: [:show, :edit, :update, :destroy, :confirm, :pay]
+
+  before_action :set_params, only: [:show, :destroy, :edit, :update, :confirm, :pay]
+
   before_action :set_card, only: [:confirm, :pay]
   before_action :payjp_api_key, only: [:confirm, :pay]
 
   def index
     @items = Item.includes(:saler)
-    @images= []
+
+    @images = [] 
     @items.each do |item|
-      @images << item.item_images.first
+      @images << item.item_images.first    
+
     end
   end
 
@@ -73,7 +77,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to root_path
     else
-      render edit_item_path
+      render edit_item_path(@item)
     end
   end
 
@@ -103,8 +107,6 @@ class ItemsController < ApplicationController
         customer: @card.customer_id,
         currency: 'jpy',
       )
-    else
-
     end
   end
 
