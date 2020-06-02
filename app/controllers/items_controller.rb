@@ -6,7 +6,10 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:saler)
-    @images = ItemImage.all
+    @images= []
+    @items.each do |item|
+      @images << item.item_images.first
+    end
   end
 
   def new
