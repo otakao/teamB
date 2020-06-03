@@ -49,12 +49,6 @@ ActiveRecord::Schema.define(version: 2020041810554410) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "condition"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id"
     t.bigint "user_id"
@@ -92,18 +86,6 @@ ActiveRecord::Schema.define(version: 2020041810554410) do
     t.index ["postage_id"], name: "index_items_on_postage_id"
     t.index ["saler_id"], name: "index_items_on_saler_id"
     t.index ["shipping_date_id"], name: "index_items_on_shipping_date_id"
-  end
-
-  create_table "postages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "payer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shipping_dates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
