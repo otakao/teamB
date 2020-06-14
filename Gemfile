@@ -45,6 +45,9 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -63,6 +66,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
   gem 'webdrivers'
+  gem 'faker', "~> 2.8"
 end
 
 group :production do
@@ -82,6 +86,5 @@ gem 'pry-rails'
 gem 'payjp'
 gem 'rails-i18n'
 gem 'enum_help'
-gem 'rspec-rails'
 gem 'jquery-rails'
 gem 'sassc'
