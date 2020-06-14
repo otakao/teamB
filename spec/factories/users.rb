@@ -1,16 +1,17 @@
 FactoryBot.define do
-  
-  factory :user do
-    nickname              {"kkkkkkk"}
-    # email                 {"kkk@gmail.com"}
-    password              {"aaaaaaaa"}
-    password_confirmation {"aaaaaaaa"}
-    first_name            {"山田"}
-    last_name             {"太郎"}
-    first_name_furigana   {"やまだ"}
-    last_name_furigana    {"たろう"}
-    birthday              {"1981/01/10"}
-    sequence(:email) {Faker::Internet.email}
-  end
 
+  factory :user do
+    id                      {"1"}
+    nickname                {"hoge"}
+    email                   {"aaaaaaaa@gmail.com"}
+    password                {"Aaaaaaaa1"}
+    encrypted_password      {"Aaaaaaaa1"}
+    last_name               {"ほげ"}
+    first_name              {"ほげ"}
+    last_name_furigana      {"ほげ"}
+    first_name_furigana     {"ほげ"}
+    birthday                {"1990-06-06"}
+    tel                     {""}
+
+  end
 end
