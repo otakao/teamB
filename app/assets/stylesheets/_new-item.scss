@@ -15,11 +15,11 @@
     max-width: 700px;
     width: 100%;
     margin: 0px auto;
-    height: auto;
+    height: 2210px;
 
     &__inner {
       width: 700px;
-      height: auto;
+      height: 2146px;
       background-color: white;
 
       hr {
@@ -69,28 +69,31 @@
           margin-top: 16px;
           padding: 0 4px;
           align-items: center;
+          display: flex;
+          height: 100%;
           cursor: pointer;
           border-width: 1px;
           border-color: rgb(204, 204, 204);
           border-image: initial;
           border-style: dashed;
           width: 620px;
-          height: auto;
+          height: 150px;
           font-size: 12px;
-
+          position: relative;
           #image-box{
             display: flex;
-            flex-wrap: wrap;
+            
             #previews{
               display: flex;
-              flex-wrap: wrap;
+              
+              .js-file_group{
+                .js-remove{
+                
+                }
+              }
               
             }
-            .js-file_group{
-              display: flex;
-            }
           }
-        
           
 
           &__icon {
