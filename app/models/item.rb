@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
-  belongs_to :saler, class_name: 'User'
+  belongs_to :saler, class_name: 'User', optional: true
   belongs_to :buyer, class_name: 'User', optional: true
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
-  belongs_to :category
+  belongs_to :category, optional: true
   belongs_to :brand, optional: true
   has_many :item_images, dependent: :destroy
   accepts_nested_attributes_for :item_images, allow_destroy: true
