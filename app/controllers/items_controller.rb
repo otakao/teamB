@@ -61,6 +61,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+  
   def confirm
     @image= @item.item_images.first
     @address= current_user.address
