@@ -50,6 +50,8 @@ class ItemsController < ApplicationController
     @images= @item.item_images
     @first_image= @images.first
     @other_images= @images.where.not(id: @images.select('min(id)'))
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)        
   end
 
   def edit

@@ -68,7 +68,7 @@
                 %tr.test3
                   %th ブランド
                   %td
-                -#     ="#{@item.brand.name}"
+                    -# ="#{@item.brand.name}"
                 %tr.test4
                   %th 商品サイズ
                   %td
@@ -97,17 +97,40 @@
                 = link_to 'お気に入り 0', '#'
             
         .item-main__show-item__main-content__content__comment
+          .comments
+            %h4.comment
+              <コメント一覧>
+              - if @comments
+                = @comments.each do |comment| 
+                  %p4
+                    %strong
+                      -# =link_to comment.user.nickname, "/users/#{comment.user_id}"
+                    -#   :
+                    -# =comment.text
+
           %ul.comments
-          %form
-            %input.textarea{type: 'text'}
+          =form_for @comment do |f|
+            =f.text_area :text, class:"textarea"
             %p.notice
               相手のことを考え丁寧なコメントを心がけましょう。
               %br/
               不快な言葉遣いなどは利用制限や退会処分となることがあります。
             .comment-button1                
-              %input.comment-button{type: 'submit',  value: 'コメントする'}
+              =f.submit 'コメントする', class:"comment-button"
               %i.fa.fa-comment.icon-comment
               
+          -#     .item-main__show-item__main-content__content__comment
+          -# %ul.comments
+          -# %form
+          -#   %input.textarea{type: 'text'}
+          -#   %p.notice
+          -#     相手のことを考え丁寧なコメントを心がけましょう。
+          -#     %br/
+          -#     不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          -#   .comment-button1                
+          -#     %input.comment-button{type: 'submit',  value: 'コメントする'}
+          -#     %i.fa.fa-comment.icon-comment
+
         %ul.item-main__show-item__main-content__content__link
           %li.left
             %i.fa.fa-angle-left.icon
