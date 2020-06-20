@@ -98,16 +98,23 @@
             
         .item-main__show-item__main-content__content__comment
           %ul.comments
-          %form
-            %input.textarea{type: 'text'}
+          = form_with(model: [@item, @comment], local:true, id: "new_comment") do |f|
+            =f.text_area :content, {class: "textarea"}
             %p.notice
               相手のことを考え丁寧なコメントを心がけましょう。
               %br/
               不快な言葉遣いなどは利用制限や退会処分となることがあります。
             .comment-button1                
-              %input.comment-button{type: 'submit',  value: 'コメントする'}
+              = f.submit "コメントする",{class: 'comment-button'}
               %i.fa.fa-comment.icon-comment
               
+            .comment-box
+              %h4＜コメント一覧＞
+              - @comments.each do |comment|
+                .comment_user_content
+                  = comment.user.nickname
+                  = comment.content
+
         %ul.item-main__show-item__main-content__content__link
           %li.left
             %i.fa.fa-angle-left.icon
