@@ -1,21 +1,27 @@
 class Item < ApplicationRecord
-  belongs_to :saler, class_name: 'User'
+  belongs_to :saler, class_name: 'User', optional: true
   belongs_to :buyer, class_name: 'User', optional: true
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
-  belongs_to :category
+  belongs_to :category, optional: true
   belongs_to :brand, optional: true
   has_many :item_images, dependent: :destroy
   accepts_nested_attributes_for :item_images, allow_destroy: true
+  has_many :comments
+
+  validates_associated :item_images
+  validates :price, numericality: {greater_than_or_equal_to: 300,less_than_or_equal_to: 9999999}
 
   with_options presence: true do
     validates :name
     validates :discription
     validates :price
     validates :condition
+    validates :postage
     validates :prefecture
     validates :shipping_date
     validates :category_id
+    validates :item_images
   end
 
 

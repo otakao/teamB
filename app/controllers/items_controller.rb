@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render new_item_path
+      redirect_to new_item_path
     end
   end
 
@@ -50,6 +50,8 @@ class ItemsController < ApplicationController
     @images= @item.item_images
     @first_image= @images.first
     @other_images= @images.where.not(id: @images.select('min(id)'))
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user).order(created_at: :desc)
   end
 
   def edit
@@ -77,7 +79,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to root_path
     else
-      render edit_item_path(@item)
+      redirect_to edit_item_path(@item)
     end
   end
 
@@ -113,7 +115,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :discription, :condition, :postage, :prefecture, :shipping_date, :price, :category_id, :brand_id, item_images_attributes: [ :image, :_destroy, :id]).merge(saler_id: current_user.id)
+    params.require(:item).permit(:name, :discription, :condition, :postage, :prefecture, :shipping_date, :price, :category_id, :brand_id, :buyer_id, item_images_attributes: [ :image, :_destroy, :id]).merge(saler_id: current_user.id)
   end
 
   def set_params

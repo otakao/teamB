@@ -11,7 +11,7 @@ $(function () {
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" width="120px" height="120px">`;
     return html;
   }
 
@@ -53,7 +53,7 @@ $(function () {
     $(`img[data-index="${targetIndex}"]`).remove();
 
     // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+    if ($('.js-file').length == 0) $('#previews').append(buildFileField(fileIndex[0]));
   });
 });
 

@@ -73,6 +73,11 @@
           = link_to item_path(item), class:"furima-main__pickup__content__lists__list__link" do
             .furima-main__pickup__content__lists__list__link__img
               = image_tag image.image_url, size: "220x210"
+              - if item.buyer_id.present?
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner 
+                    SOLD
+              
             .furima-main__pickup__content__lists__list__link__box
               %h3.furima-main__pickup__content__lists__list__link__box__name 
                 = item.name
