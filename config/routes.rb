@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'confirm'
       post 'pay'
     end
+    resources :comments, only: :create
   end 
   resources :users, only: :show
   resources :addresses, only:[:new, :create, :edit, :update]

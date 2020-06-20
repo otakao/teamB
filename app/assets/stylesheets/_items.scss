@@ -362,6 +362,32 @@
               width: 220px;
               height: 210px;
               text-align: center;
+              position: relative;
+              .items-box_photo{
+                &__sold{
+                  width: 0px;
+                  height: 0px;
+                  border-width: 120px 120px 0 0;
+                  border-color: #ea352d transparent transparent transparent;
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  z-index: 1;
+                  border-style: solid;
+                  &__inner{
+                    top: -90px;
+                    font-size: 30px;
+                    position: absolute;
+                    left: 0;
+                    z-index: 2;
+                    color: #fff;
+                    transform: rotate(-45deg);
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                  }
+                }
+              }
             }
             &__box{
               background-color: white;
@@ -417,6 +443,7 @@
     }
   }
 }
+
 
 .furima-footer{
   padding: 60px 0;
