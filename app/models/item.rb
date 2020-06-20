@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to :brand, optional: true
   has_many :item_images, dependent: :destroy
   accepts_nested_attributes_for :item_images, allow_destroy: true
-  has_many :comments
+  has_many :comments,  dependent: :destroy
 
   validates_associated :item_images
   validates :price, numericality: {greater_than_or_equal_to: 300,less_than_or_equal_to: 9999999}
