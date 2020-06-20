@@ -66,6 +66,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
   gem 'webdrivers'
+  gem 'faker', "~> 2.8"
 end
 
 group :production do
