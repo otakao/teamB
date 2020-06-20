@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
     @first_image= @images.first
     @other_images= @images.where.not(id: @images.select('min(id)'))
     @comment = Comment.new
-    @comments = @item.comments.includes(:user)
+    @comments = @item.comments.includes(:user).order(created_at: :desc)
   end
 
   def edit

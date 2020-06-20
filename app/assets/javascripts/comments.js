@@ -23,7 +23,7 @@ $(function (){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.comment-box').append(html);
+      $('.comment-box').prepend(html);
       $('.textarea').val('');
       $('.comment-button').prop('disabled', false);
     })

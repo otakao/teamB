@@ -108,8 +108,9 @@
               = f.submit "コメントする",{class: 'comment-button'}
               %i.fa.fa-comment.icon-comment
               
+            
+            %h4＜コメント一覧＞
             .comment-box
-              %h4＜コメント一覧＞
               - @comments.each do |comment|
                 .comment_user_content
                   = comment.user.nickname
