@@ -82,17 +82,39 @@
           position: relative;
           #image-box{
             display: flex;
-            
-            #previews{
-              display: flex;
-              
-              .js-file_group{
-                .js-remove{
-                
-                }
+            .item-num-0#image-box__container{
+              .item-num-0{
+                width: 100%;
               }
-              
+              .item-num-1{
+                width: 491px;
+              }
+              .item-num-2{
+                width: 363px;
+              }
+              .item-num-3{
+                width: 234px;
+              }
+              .item-num-4{
+                width: 106px;
+              }
+              .item-num-5{
+                width: 100%;
+              }
+              .item-num-6{
+                width: 491px;
+              }
+              .item-num-7{
+                width: 363px;
+              }
+              .item-num-8{
+                width: 234px;
+              }
+              .item-num-9{
+                width: 106px;
+              }
             }
+          
           }
           
 
