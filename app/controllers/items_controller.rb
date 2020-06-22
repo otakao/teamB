@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
 
   before_action :set_params, only: [:show, :destroy, :edit, :update, :confirm, :pay, :correct_user]
   before_action :move_to_index,  except: [:index, :show]
+  before_action :move_to_index2,  only: :confirm
+  before_action :move_to_index3,  only: :show
   before_action :correct_user, only: [:edit, :update]
   before_action :set_card, only: [:confirm, :pay]
   before_action :payjp_api_key, only: [:confirm, :pay]
@@ -125,6 +127,16 @@ class ItemsController < ApplicationController
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
+  end
+
+  def move_to_index2
+    @item= Item.find(params[:id])
+    redirect_to action: :index if current_user.id == @item.saler.id
+  end
+
+  def move_to_index3
+    @item= Item.find(params[:id])
+    redirect_to action: :index if @item.buyer_id.present?
   end
 
   def correct_user
