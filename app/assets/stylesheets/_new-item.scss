@@ -15,11 +15,10 @@
     max-width: 700px;
     width: 100%;
     margin: 0px auto;
-    height: 2210px;
+    
 
     &__inner {
       width: 700px;
-      height: 2146px;
       background-color: white;
 
       hr {
@@ -152,7 +151,7 @@
             height: 48px;
             margin-top: 16px;
 
-            input#_name.top-text {
+            input#item_name.top-text {
               border: 1px solid #ccc;
               border-radius: 4px;
               height: 48px;
@@ -208,7 +207,7 @@
 
       &__section3 {
         width: 700px;
-        height: 444px;
+      
         padding: 40px;
         
         &__title {
@@ -222,7 +221,7 @@
         }
         &__category {
           width: 620px;
-          height: 83px;
+          
           margin: 32px 0 60px 0;
 
           &__title {
@@ -247,7 +246,7 @@
           &__select {
             margin-top: 16px;
             
-            select#_category {
+            select#parent_category {
               height: 48px;
               padding: 10px 16px 8px;
               border-radius: 4px;
@@ -255,12 +254,30 @@
               width: 100%;
               background-color: #fff;
             }
+            select#child_category {
+              height: 48px;
+              padding: 20px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              width: 100%;
+              background-color: #fff;
+              margin-top: 15px;
+            }
+            select#grandchild_category {
+              height: 48px;
+              padding: 20px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              width: 100%;
+              background-color: #fff;
+              margin-top: 15px;
+            }
           }
         }
         &__brand {
           margin-top: 32px;
           width: 620px;
-          height: 83px;
+          
 
           &__title {
             width: 620px;
@@ -282,7 +299,7 @@
           &__text {
             margin-top: 16px;
 
-            input#_name.top-text {
+            input#item_brand_id.top-text {
               border: 1px solid #ccc;
               border-radius: 4px;
               height: 48px;
@@ -295,7 +312,7 @@
         &__status {
           margin-top: 32px;
           width: 620px;
-          height: 83px;
+          
 
           &__title {
             width: 620px;
@@ -318,7 +335,7 @@
           &__select {
             margin-top: 16px;
 
-            select#_category {
+            select#item_condition {
               height: 48px;
               padding: 10px 16px 8px;
               border-radius: 4px;
@@ -332,7 +349,6 @@
       &__section4 {
         padding: 40px;
         width: 700px;
-        height: 444px;
 
         &__top {
           margin-bottom: 24px;
@@ -372,7 +388,7 @@
           &__select {
             margin-top: 16px;
 
-            select#_category {
+            select#item_postage {
               height: 48px;
               padding: 10px 16px 8px;
               border-radius: 4px;
@@ -408,7 +424,7 @@
           &__select {
             margin-top: 16px;
 
-            select#_category {
+            select#item_prefecture {
               height: 48px;
               padding: 10px 16px 8px;
               border-radius: 4px;
@@ -444,7 +460,7 @@
           &__select {
             margin-top: 16px;
 
-            select#_category {
+            select#item_shipping_date {
               height: 48px;
               padding: 10px 16px 8px;
               border-radius: 4px;
@@ -458,7 +474,6 @@
       &__section5 {
         padding: 40px 40px 0 40px;
         width: 700px;
-        height: 270px;
 
         &__top {
           width: 620px;
@@ -493,7 +508,7 @@
                 width: 285px;
                 height: 48px;
 
-                input#_name.top-text {
+                input#price_calc.top-text {
                   border: 1px solid #ccc;
                   border-radius: 4px;
                   box-sizing: border-box;        
@@ -592,7 +607,6 @@
     &__section6 {
       margin: 0 170px 32px 170px;
       width: 360px;
-      height: 164px;
 
       &__top {
         background-color: #ea352d;
@@ -640,7 +654,6 @@
     }
     .exhibition-main__inner__section7 {
       width: 620px;
-      height: 32px;
       margin: 0 40px 64px;
       font-size: 12px;
      }
