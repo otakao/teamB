@@ -1,12 +1,21 @@
-$(function(){
-  var dataBox = new DataTransfer();
-  var file_field = document.querySelector('input[type=file]')
-  $('#img-file').change(function(){
-    var file = $('input[type="file"]').prop('files')[0];
-    $.each(this.files, function(i, file){
-      var fileReader = new FileReader();
-      dataBox.items.add(file)
-      file_field.files = dataBox.files
+$(function () {
+  // 画像用のinputを生成する関数
+  const buildFileField = (num)=> {
+    const html = `<div data-index="${num}" class="js-file_group">
+                  <input class="js-file" type="file"
+                  name="item[item_images_attributes][${num}][image]"
+                  id="item_images_attributes_${num}_image"><br>
+                  <div class="js-remove">削除</div>
+                  </div>`;
+    return html;
+  }
+  // プレビュー用のimgタグを生成する関数
+  const buildImg = (index, url)=> {
+    const html = `<div id="imgdata${index}">
+                  <img data-index="${index}" src="${url}" width="120px" height="120px">
+                  </div>`;
+    return html;
+  }
 
       var num = $('.item-image').length + 1 + i
       fileReader.readAsDataURL(file);
