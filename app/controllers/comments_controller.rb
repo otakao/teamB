@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     comment = Comment.find(params[:id])
     comment.destroy
     flash[:success] = 'コメントを削除しました'
-    redirect_to item_path
+    redirect_to root_path
   end
 
   private

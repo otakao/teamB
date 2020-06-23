@@ -82,7 +82,7 @@ $(function(){
     .done(function(data){
       // if (data.comment_user_id == data.item_user_id) {
         var html = buildHTML(data);
-        $('.comment-box').append(html);
+        $('.comment-box').prepend(html);
         $('.textarea').val('');
         $('.comment-button').prop('disabled', false);
       // } else {
