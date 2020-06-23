@@ -109,13 +109,28 @@
               %i.fa.fa-comment.icon-comment
               
             
-            %h4＜コメント一覧＞
+            %h4.comment コメント一覧
             .comment-box
               - @comments.each do |comment|
+                -# .comment_user_content
+                -#   = comment.user.nickname
+                -#   = comment.content
                 .comment_user_content
-                  = comment.user.nickname
-                  = comment.content
-
+                  .profile
+                    .profile__name
+                      =comment.user.nickname
+                    .profile__right
+                      .image
+                        %i.fas.fa-user-circle
+                      .seller_or_buyer
+                        出品者
+                  .comment
+                    .comment__text
+                      =comment.content
+                    .comment__bottom
+                      .comment__trash
+                        %a{"data-method" => "delete", :href => "/items/${comment.item_id}/comments/${comment.comment_id}", :item_id => "@item", :rel => "nofollow"}
+                          %i.fa.fa-trash
         %ul.item-main__show-item__main-content__content__link
           %li.left
             %i.fa.fa-angle-left.icon
@@ -123,8 +138,5 @@
           %li.right
             = link_to "後ろの商品" ,root_path 
             %i.fa.fa-angle-right.icon
-
         .item-main__show-item__main-content__more-item
           = link_to "#{@category.root.name}をもっと見る" ,root_path
-
-

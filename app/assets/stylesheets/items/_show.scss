@@ -417,7 +417,50 @@
       
      }
          
-     
+     h4.comment{
+       margin-top: 20px;
+       color:  #3CCACE;
+       font-size: 20px;
+     }
+     .comment_user_content{
+       display: flex;
+       .profile{
+         text-align: left;
+         &__name{
+           margin-left: 80px;
+         }
+         .image{
+           margin-left:13px;
+         }
+         i{
+           font-size: 40px;
+         }
+         .seller_or_buyer{
+           font-size: 12px;
+           padding: 0.5em 1em;
+           margin: 0.5em 0;
+           color: #fff;
+           background: #3CCACE;
+           border-radius: 5px;       
+           width:60px;
+         }
+       }
+       .comment{
+         margin-top: 35px;
+         width: 100%;
+         background: #CCFFFF;
+         border-radius: 5px;
+         &__text{
+           text-align: left;
+         }
+         &__bottom {
+           padding-top: 20px;
+           
+         }
+       }
+
+     }
+
     
 
     .item-main__show-item__main-content__content__link{
