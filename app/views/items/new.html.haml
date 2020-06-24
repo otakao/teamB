@@ -5,7 +5,8 @@
         =link_to image_tag("http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"), root_path 
 
 
-    =form_for (@item) do |f|   
+    -# =form_for (@item) do |f|   
+    =form_with model:@item, local:true do |f|
       .exhibition-main
         .exhibition-main__inner
           .exhibition-main__inner__section1
@@ -14,7 +15,6 @@
               %span.span1 必須
             %p.exhibition-main__inner__section1__picture__content
               最大10枚までアップロードできます
-
 
             .exhibition-main__inner__section1__image-box
               #previews
