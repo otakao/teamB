@@ -9,7 +9,6 @@ class Users::SessionsController < Devise::SessionsController
   def destroy
     redirect_to root_path
   end
-
   # def create
   #   user =User.find_by(email: session_params[:email])
 
