@@ -48,5 +48,9 @@
           %label{for: 'tel'} 電話番号
         .resistration-list__right
           =f.text_field :tel, class: 'text-form text-form__short'
-      %li.update-btn 
-        = f.submit '変更する', class: 'submit-btn'
+      -if address.persisted?
+        %li.update-btn 
+          = f.submit '変更する', class: 'submit-btn'
+      -else
+        %li.update-btn 
+          = f.submit '登録する', class: 'submit-btn'
