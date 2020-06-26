@@ -98,7 +98,7 @@
             
         .item-main__show-item__main-content__content__comment
           %ul.comments
-          = form_with(model: [@item, @comment], local:true, id: "new_comment") do |f|
+          = form_with(model: [@item, @comment], id: "new_comment") do |f|
             =f.text_area :content, {class: "textarea"}
             %p.notice
               相手のことを考え丁寧なコメントを心がけましょう。
